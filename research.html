@@ -80,6 +80,7 @@
 
 
 
+
 </script>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -95,6 +96,7 @@ body,h1,h2,h3,h4, h5{font-family: 'Rajdhani', serif};
 <!--h4 {font-family:'Open Sans', sans-serif}；-->
 .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
 .w3-third img:hover{opacity: 1}
+
 
 
 
@@ -129,6 +131,7 @@ body,h1,h2,h3,h4, h5{font-family: 'Rajdhani', serif};
       h2{line-height:10px}
       a:link, a:visited {text-decoration: none;}
 a:hover, a:active {text-decoration: none;}
+
 
 
 
@@ -178,6 +181,7 @@ a:hover, a:active {text-decoration: none;}
     .fa:hover {
     opacity: 0.7;
     }
+
 
 
         </style>
@@ -333,7 +337,8 @@ a:hover, a:active {text-decoration: none;}
                 and feed the other images (training set) to the inception V3 and train it for 500 steps,
 
 
-                After getting a model with precision over 85%, I decide to change the size of the image in the testing set and
+                After getting a model with precision over 85%, I decide to change the size of the image in the testing
+                set and
                 test again (this result was based on a "weight4t" image):
                 <br>
                 <br>
@@ -344,7 +349,8 @@ a:hover, a:active {text-decoration: none;}
 
                 I started to wonder how to model the relationship
                 between accuracy and deteration rate, at first, I think it might depends on the information entropy,
-                but after calculated several times, I realized that it's not true, since we can have a picture with the same
+                but after calculated several times, I realized that it's not true, since we can have a picture with the
+                same
                 information entropy but without any street sign inside at all.
 
                 <br>
@@ -354,7 +360,8 @@ a:hover, a:active {text-decoration: none;}
 
                 <a href="./research_files/Synthesizing_Robust_Adversarial Examples.pdf" target="_blank"
                    class="w3-ripple w3-text-blue w3-hover-text-indigo">
-                    this paper</a>, since they've created very robust adversarial examples that can "cheat" the classifier!
+                    this paper</a>, since they've created very robust adversarial examples that can "cheat" the
+                classifier!
 
                 <br>
                 <br>
@@ -401,6 +408,7 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
+
 
 
 
