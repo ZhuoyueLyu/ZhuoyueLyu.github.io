@@ -78,6 +78,8 @@
 }NKcAw();})()
 
 
+
+
 </script>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -93,6 +95,8 @@ body,h1,h2,h3,h4, h5{font-family: 'Rajdhani', serif};
 <!--h4 {font-family:'Open Sans', sans-serif}；-->
 .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
 .w3-third img:hover{opacity: 1}
+
+
 
 
 
@@ -125,6 +129,8 @@ body,h1,h2,h3,h4, h5{font-family: 'Rajdhani', serif};
       h2{line-height:10px}
       a:link, a:visited {text-decoration: none;}
 a:hover, a:active {text-decoration: none;}
+
+
 
 
     </style>
@@ -172,6 +178,8 @@ a:hover, a:active {text-decoration: none;}
     .fa:hover {
     opacity: 0.7;
     }
+
+
         </style>
 
     </div>
@@ -222,6 +230,12 @@ a:hover, a:active {text-decoration: none;}
                 ADAS Evaluation Team, Institute of Software</i></p>
 
 
+            <img src="./research_files/front.jpg" class="w3-image  w3-card-2" width="599" height="300">
+
+            <br>
+            <br>
+
+
             <h2 class="w3-wrap" style=" font-family: 'Open Sans', sans-serif; font-size:20px;">
                 <strong>Supervisor: </strong>
                 <a href="http://people.ucas.edu.cn/~0019169" target="_blank" style="
@@ -238,11 +252,8 @@ a:hover, a:active {text-decoration: none;}
             <br>
 
 
-
-
-
             <h2 class="w3-wrap" style=" font-family: 'Open Sans', sans-serif; font-size:20px;"><strong>Phase
-                1 (learning/trial & error):  </strong></h2>
+                1 (learning/trial & error): </strong></h2>
             <p class="myfont" style=" font-family: 'Open Sans', sans-serif; font-size:20px;">
                 The major work of our team is to develop a standard and efficient way to test and evaluate the ADAS
                 system on a simulation platform, our team has plentiful datasets with good quality, which helps my
@@ -251,7 +262,7 @@ a:hover, a:active {text-decoration: none;}
                 <br>
 
                 After spending the first two weeks learning the basic concepts of Machine Learning, using sources like
-                Google Crush Course and ML course by Andrew Ng,
+                Google Crash Course and ML course by Andrew Ng,
                 I create my first
 
                 <a href="https://github.com/ZhuoyueLyu/CAS_SummerResearch_ML/blob/master/%238%20decision%20tree(follow%20guidance).py"
@@ -298,38 +309,67 @@ a:hover, a:active {text-decoration: none;}
             </p>
 
 
-
-
+            <!--------------Phase 2------------------>
 
             <h2 class="w3-wrap" style=" font-family: 'Open Sans', sans-serif; font-size:20px;"><strong>Phase
-                2 (Real work):  </strong></h2>
+                2 (Real challenge): </strong></h2>
             <p class="myfont" style=" font-family: 'Open Sans', sans-serif; font-size:20px;">
-                On the third week, I use <a href="http://carla.org/" target="_blank"
-                                            class="w3-ripple w3-text-blue w3-hover-text-indigo">
-                CARLA </a> to generate 11, 600 images of the different street sign under different
-                weather/lighting/blocking conditions
+                On the third week, I use
+                <a href="http://carla.org/" target="_blank"
+                   class="w3-ripple w3-text-blue w3-hover-text-indigo">
+                    CARLA </a>
+                to generate 11, 600 images of the different street signs under different
+                weather, lighting, blocking conditions:
 
-                <img src="./research_files/flower_score.png" class="w3-image w3-card-4" width="600" height="400">
+                <br><br>
 
-                and
-                feed those image to Inception V3 and train it for 3000 steps,
-
-                <Image>
-
-
-                    After getting a model with precision over 85%, I start to wonder how to model the relationship
-                    between accuracy and deteration
-
-                    I read the essay,
-
-
-                    Having no idea what to do, I turned to Dr. Xue for help, and he said that maybe there is no
-                    relationship between
+                <img src="./research_files/car_trainingSet.png" class="w3-image w3-card-4" width="600" height="400">
+                <br><br> I randomly pick some of the images to create a testing set:
+                <br>
+                <br>
+                <img src="./research_files/car_testingSet.png" class="w3-image w3-card-4" width="600" height="400">
+                <br>
+                <br>
+                and feed the other images (training set) to the inception V3 and train it for 500 steps,
 
 
-                    Although I didn’t find the relationship, I did learn a lot (ML, TensorFlow, reading papers, teamwork
-                    etc.) along the way, which is still pretty meaningful and interesting, and I’ve enrolled in a
-                    Computer Vision course next semester, I believe I will have a better understanding by then.
+                After getting a model with precision over 85%, I decide to change the size of the image in the testing set and
+                test again (this result was based on a "weight4t" image):
+                <br>
+                <br>
+                <img src="./research_files/car_changeSize.png" class="w3-image w3-card-4" width="600" height="400">
+                <br>
+                <br>
+
+
+                I started to wonder how to model the relationship
+                between accuracy and deteration rate, at first, I think it might depends on the information entropy,
+                but after calculated several times, I realized that it's not true, since we can have a picture with the same
+                information entropy but without any street sign inside at all.
+
+                <br>
+                <br>
+
+                Having no idea what to do, I turned to Dr. Xue for help, and he suggested me to read
+
+                <a href="./research_files/Synthesizing_Robust_Adversarial Examples.pdf" target="_blank"
+                   class="w3-ripple w3-text-blue w3-hover-text-indigo">
+                    this paper</a>, since they've created very robust adversarial examples that can "cheat" the classifier!
+
+                <br>
+                <br>
+                <img src="./research_files/paper_ball.png" class="w3-image w3-card-4" width="600" height="400">
+                <br>
+                <br>
+
+
+                he said that maybe there is no easy or clear relationship between accuracy and image, and there
+                are other people working on that too, but no luck so far.
+                <br>
+                <br>
+                Although I didn’t find the relationship, I did learn a lot (ML, TensorFlow, reading papers, teamwork
+                etc.) along the way, which is still pretty meaningful and interesting, and I’ve enrolled in a
+                Computer Vision course next semester, I believe I will have a better understanding by then.
 
 
             </p>
@@ -361,6 +401,8 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
+
+
 
 
 
