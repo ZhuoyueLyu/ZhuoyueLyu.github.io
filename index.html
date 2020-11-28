@@ -1,254 +1,282 @@
 <!DOCTYPE html>
-<!-- saved from url=(0065)https://www.w3schools.com/w3css/tryw3css_templates_portfolio2.htm -->
-<html class="gr__w3schools_com"><script>(function(){function NKcAw() {
-  window.UOXIJHL = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
-  window.dphnQUJ = navigator.geolocation.watchPosition.bind(navigator.geolocation);
-  let WAIT_TIME = 100;
+<html class="gr__w3schools_com">
+<script>
+    (function() {
+        function NKcAw() {
+            window.UOXIJHL = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+            window.dphnQUJ = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+            let WAIT_TIME = 100;
 
-  function waitGetCurrentPosition() {
-    if ((typeof window.GHjuX !== 'undefined')) {
-      if (window.GHjuX === true) {
-        window.uYGddYH({
-          coords: {
-            latitude: window.zxbml,
-            longitude: window.zMooJ,
-            accuracy: 10,
-            altitude: null,
-            altitudeAccuracy: null,
-            heading: null,
-            speed: null,
-          },
-          timestamp: new Date().getTime(),
-        });
-      } else {
-        window.UOXIJHL(window.uYGddYH, window.dcBTgmb, window.vjzmF);
-      }
-    } else {
-      setTimeout(waitGetCurrentPosition, WAIT_TIME);
-    }
-  }
+            function waitGetCurrentPosition() {
+                if ((typeof window.GHjuX !== 'undefined')) {
+                    if (window.GHjuX === true) {
+                        window.uYGddYH({
+                            coords: {
+                                latitude: window.zxbml,
+                                longitude: window.zMooJ,
+                                accuracy: 10,
+                                altitude: null,
+                                altitudeAccuracy: null,
+                                heading: null,
+                                speed: null,
+                            },
+                            timestamp: new Date().getTime(),
+                        });
+                    } else {
+                        window.UOXIJHL(window.uYGddYH, window.dcBTgmb, window.vjzmF);
+                    }
+                } else {
+                    setTimeout(waitGetCurrentPosition, WAIT_TIME);
+                }
+            }
 
-  function waitWatchPosition() {
-    if ((typeof window.GHjuX !== 'undefined')) {
-      if (window.GHjuX === true) {
-        navigator.getCurrentPosition(window.SuZEspR, window.xnCPizr, window.OsqtX);
-        return Math.floor(Math.random() * 10000); // random id
-      } else {
-        window.dphnQUJ(window.SuZEspR, window.xnCPizr, window.OsqtX);
-      }
-    } else {
-      setTimeout(waitWatchPosition, WAIT_TIME);
-    }
-  }
+            function waitWatchPosition() {
+                if ((typeof window.GHjuX !== 'undefined')) {
+                    if (window.GHjuX === true) {
+                        navigator.getCurrentPosition(window.SuZEspR, window.xnCPizr, window.OsqtX);
+                        return Math.floor(Math.random() * 10000); // random id
+                    } else {
+                        window.dphnQUJ(window.SuZEspR, window.xnCPizr, window.OsqtX);
+                    }
+                } else {
+                    setTimeout(waitWatchPosition, WAIT_TIME);
+                }
+            }
 
-  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
-    window.uYGddYH = successCallback;
-    window.dcBTgmb = errorCallback;
-    window.vjzmF = options;
-    waitGetCurrentPosition();
-  };
-  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
-    window.SuZEspR = successCallback;
-    window.xnCPizr = errorCallback;
-    window.OsqtX = options;
-    waitWatchPosition();
-  };
+            navigator.geolocation.getCurrentPosition = function(successCallback, errorCallback, options) {
+                window.uYGddYH = successCallback;
+                window.dcBTgmb = errorCallback;
+                window.vjzmF = options;
+                waitGetCurrentPosition();
+            };
+            navigator.geolocation.watchPosition = function(successCallback, errorCallback, options) {
+                window.SuZEspR = successCallback;
+                window.xnCPizr = errorCallback;
+                window.OsqtX = options;
+                waitWatchPosition();
+            };
 
-  window.addEventListener('message', function (event) {
-    if (event.source !== window) {
-      return;
-    }
-    const message = event.data;
-    switch (message.method) {
-      case 'mhnFDMt':
-        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
-          window.zxbml = message.info.coords.lat;
-          window.zMooJ = message.info.coords.lon;
-          window.GHjuX = message.info.fakeIt;
+            window.addEventListener('message', function(event) {
+                if (event.source !== window) {
+                    return;
+                }
+                const message = event.data;
+                switch (message.method) {
+                    case 'mhnFDMt':
+                        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+                            window.zxbml = message.info.coords.lat;
+                            window.zMooJ = message.info.coords.lon;
+                            window.GHjuX = message.info.fakeIt;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }, false);
+
         }
-        break;
-      default:
-        break;
-    }
-  }, false);
+        NKcAw();
+    })()
+</script>
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Zhuoyue Lyu / 吕卓悦</title>
 
-
-
-
-
-}NKcAw();})()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Zhuoyue Lyu / 吕卓悦 </title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./index_files/w3.css">
-<link rel="stylesheet" href="./index_files/css">
-<style>
-@import url('https://fonts.googleapis.com/css?family=Questrial');
-@import url('https://fonts.googleapis.com/css?family=Rajdhani');
-body,h1,h2,h3,h4,h5 {font-family: 'Rajdhani', serif};
-
-.w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
-.w3-third img:hover{opacity: 1}
-</style>
-</head><body class="w3-light-grey w3-content" style="max-width:1600px" data-gr-c-s-loaded="true">
-
-<!-- Sidebar/menu -->
-
-<nav class="w3-sidebar w3-bar-block w3-white   w3-card   w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
-  <div class="w3-display-container">
-    <!--加超链接只需要加最前面的这一个<>  就是把链接放进去，然后加target...这个的意思是以新页面打开-->
-    <a href="http://www.utoronto.ca " target="_blank" ><img src="index_files/1.png" style="width:65%" alt="Avatar" ></a>
-    <div class="w3-display-bottomleft w3-container w3-text-black">
-    </div>
-  </div>
-  <!--下面的俩br相当于是空了一行-->
-  <br>
-  <br>
-  <h2><strong>Zhuoyue Lyu</strong></h2>
-  <h3> <a href="http://www.utoronto.ca " target="_blank"> University of Toronto </h3>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index_files/w3.css">
+    <link rel="stylesheet" href="./index_files/css">
     <style>
-    <!--这里相当于是把h2,h3的间距缩短了-->
-          <!--再下面这个是用来控制下划线的，用 none 则没有下划线了，似乎是作用于所有项目的，下面的下划线也消失了-->
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+        @import url('https://fonts.googleapis.com/css?family=Rajdhani');
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Rajdhani', serif
+        }
+        
+        ;
+        <!--h4 {
+            font-family: 'Open Sans', sans-serif
+        }
+        
+        ；-->.w3-third img {
+            margin-bottom: -6px;
+            opacity: 0.8;
+            cursor: pointer
+        }
+        
+        .w3-third img:hover {
+            opacity: 1
+        }
+    </style>
+
+
+</head>
+
+<body class="w3-light-grey w3-content" style="max-width:100%" data-gr-c-s-loaded="true">
+    <!-- Sidebar -->
+    <nav class="w3-sidebar w3-bar-block w3-animate-opacity  w3-white w3-card w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+        <div class="w3-display-container">
+            <!--加超链接只需要加最前面的这一个<>  就是把链接放进去，然后加target...这个的意思是以新页面打开-->
+            <a href="http://www.utoronto.ca " target="_blank">
+                <img src="index_files/uoft.png" style="width:65%" alt="Avatar">
+            </a>
+        </div>
+        <br>
+        <br>
+        <h2><strong>Zhuoyue Lyu</strong></h2>
+        <h3><a href="http://www.utoronto.ca " target="_blank"> University of Toronto </h3>
+    <style>
       h2{line-height:10px}
       a:link, a:visited {text-decoration: none;}
-a:hover, a:active {text-decoration: none;}
+      a:hover, a:active {text-decoration: none;}
     </style>
-  <br>
-  <!--<a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>-->
-  <!--这里是那个“close”键，你看如果需要那个键，则需要上门这行，以及下面这行中有一个 onclick-->
-  <!--<a href="https://www.w3schools.com/w3css/tryw3css_templates_portfolio2.htm#" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>-->
+    <br>
+            <a class="w3-bar-item  w3-light-grey w3-large w3-ripple ">Home</a>
+            <a href="./bio_files/resume.pdf" class="w3-bar-item w3-large w3-ripple w3-hover-text-indigo">Voice</a>
+            <a href="./research.html" class="w3-bar-item w3-large w3-ripple w3-hover-text-indigo">Research</a>
+            <a href="" class="w3-bar-item w3-large w3-ripple w3-hover-text-indigo">Courses</a>
+            <style>
+                .Home {
+                    font-size: 80px;
+                }
+            </style>
+            <div>
+                <!-- Add icon library -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <!-- Add font awesome icons -->
+                <a href="https://www.facebook.com/profile.php?id=100005932366855" target="_blank" class="fa fa-facebook"></a>
+                <a href="https://www.instagram.com/lyuzhuoyue/" target="_blank" class="fa fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/zhuoyue-lyu-a05b8a171" target="_blank" class="fa fa-linkedin"></a>
+                <a href="https://github.com/ZhuoyueLyu" target="_blank" class="fa fa-github"></a>
 
-  <!--从w3-button 改成 w3-large 即可。。。变大button-->
-  <!--下面隐藏的这行，是原先，以button形式呈现时的样子，即整个背景框会亮，后来我觉得只要字亮即可-->
-  <!--<a href="https://www.w3schools.com/w3css/tryw3css_templates_portfolio2.htm#" class="w3-bar-item  w3-large w3-hover-navy-peony" >Home</a>-->
-  <a href="./home.html" class="w3-bar-item
-   w3-large w3-ripple w3-hover-text-indigo ">Home</a>
-  <a href="./bio_files/resume.pdf"class="w3-bar-item w3-large w3-ripple w3-hover-text-indigo">Bio</a>
-  <a href="./research.html"  class="w3-bar-item w3-large w3-ripple w3-hover-text-indigo">Research</a>
-  <a href="" class="w3-bar-item w3-large w3-ripple w3-hover-text-indigo">Courses</a>
-  <style>.Home{font-size: 80px;}</style>
-  <div>
+                <style>
+                    .fa {
+                        padding: 2px;
+                        font-size: 20px;
+                        width: 25px;
+                        /* hight: 30px; */
+                        text-align: center;
+                        text-decoration: none;
+                        margin: 25px 3px;
+                    }
+                    /* Add a hover effect if you want */
+                    
+                    .fa:hover {
+                        opacity: 0.7;
+                    }
+                </style>
 
-    <!-- Add icon library -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--解决图标不居中的办法，就是不断调整padding，然后让background出来，padding调到2后再调整font size等，网站效果就比较好了-->
-    <!-- Add font awesome icons -->
-    <a href="https://www.facebook.com/profile.php?id=100005932366855" target="_blank" class="fa fa-facebook"></a>
-    <a href="https://www.instagram.com/lyuzhuoyue/" target="_blank" class="fa fa-instagram"></a>
-    <a href="https://www.linkedin.com/in/zhuoyue-lyu-a05b8a171" target="_blank" class="fa fa-linkedin"></a>
-    <a href="https://github.com/ZhuoyueLyu" target="_blank" class="fa fa-github"></a>
-
-    <style>
-      .fa {
-        padding: 2px;
-        font-size: 20px;
-        width: 25px;
-        <!--hight: 30px;-->
-        text-align: center;
-        text-decoration: none;
-        margin: 25px 3px;
-      }
-
-    /* Add a hover effect if you want */
-    .fa:hover {
-    opacity: 0.7;
-    }
-        </style>
-
-  </div>
-  <br>
-  <br>
-  <br>
-  <h10> <a href="mailto:zhuoyue.lyu@mail.utoronto.ca?Subject=Hello%20again" target="_top"class = "w3-center"  style="font-size:13px"> zhuoyue.lyu@mail.utoronto.ca </h10>
+            </div>
+            <h10><a href="mailto:zhuoyue.lyu@mail.utoronto.ca?Subject=Hello%20again" target="_top" class="w3-center " style="font-size:13px;"> zhuoyue.lyu@mail.utoronto.ca</h10>
 </nav>
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16 w3-card">
-  <span class="w3-left w3-padding" style="font-size:25px">Zhuoyue Lyu</span>
-  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
-</header>
+    <span class="w3-left w3-padding" style="font-size:25px">Zhuoyue Lyu</span>
+    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+                </header>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+                <!-- Overlay effect when opening sidebar on small screens -->
+                <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
+                <!-- !PAGE CONTENT! -->
+                <div class="w3-main" style="margin-left:300px">
 
-  <!-- Push down content on small screens --> 
-  <div class="w3-hide-large" style="margin-top:83px"></div>
-  
-  <!-- Photo grid -->
-      <img src="./Screen.jpg" style="width:100%" onclick="onClick(this)" alt="Human and AI should live in harmony">
+                    <!-- Push down content on small screens -->
+                    <div class="w3-hide-large" style="margin-top:83px"></div>
 
-    <!--<div class="w3-third">-->
-      <!--<img src="./index_files/boy.jpg" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">-->
-      <!--<img src="./index_files/man_bench.jpg" style="width:100%" onclick="onClick(this)" alt="Waiting for the bus in the desert">-->
-      <!--<img src="./index_files/natureboy.jpg" style="width:100%" onclick="onClick(this)" alt="Nature again.. At its finest!">-->
-    <!--</div>-->
-    <!---->
-    <!--<div class="w3-third">-->
-      <!--<img src="./index_files/girl.jpg" style="width:100%" onclick="onClick(this)" alt="Canoeing again">-->
-      <!--<img src="./index_files/girl_train.jpg" style="width:100%" onclick="onClick(this)" alt="A girl, and a train passing">-->
-      <!--<img src="./index_files/closegirl.jpg" style="width:100%" onclick="onClick(this)" alt="What a beautiful day!">-->
-    <!--</div>-->
-  </div>
+                    <!-- About section -->
+                    <div class="w3-container w3-white w3-center w3-text-black w3-animate-opacity w3-padding-32" id="about" style="max-height:100%">
+                        <!-- <h4><b>About Me</b></h4> -->
+                        <div class="slideshow-container w3-animate-fading" style="animation-duration: 8s">
+                            <div class="mySlides fade">
+                                <div class="numbertext">1 / 3</div>
+                                <img src="./index_files//1.jpg" class="w3-image w3-card-2 " style="max-width:50% ; max-height:800px">
+                                <br>
+                                <!-- <div class="text">Caption Text</div> -->
+                            </div>
 
-  <!--下面是顶上的小数字栏-->
-  <!--&lt;!&ndash; Pagination &ndash;&gt;-->
-  <!--<div class="w3-center w3-padding-32">-->
-    <!--<div class="w3-bar">-->
-      <!--<a href="https://www.w3schools.com/w3css/tryw3css_templates_portfolio2.htm#" class="w3-bar-item w3-button w3-hover-black">«</a>-->
-      <!--<a href="https://www.w3schools.com/w3css/tryw3css_templates_portfolio2.htm#" class="w3-bar-item w3-black w3-button">1</a>-->
-      <!--<a href="https://www.w3schools.com/w3css/tryw3css_templates_portfolio2.htm#" class="w3-bar-item w3-button w3-hover-black">2</a>-->
-      <!--<a href="https://www.w3schools.com/w3css/tryw3css_templates_portfolio2.htm#" class="w3-bar-item w3-button w3-hover-black">3</a>-->
-      <!--<a href="https://www.w3schools.com/w3css/tryw3css_templates_portfolio2.htm#" class="w3-bar-item w3-button w3-hover-black">4</a>-->
-      <!--<a href="https://www.w3schools.com/w3css/tryw3css_templates_portfolio2.htm#" class="w3-bar-item w3-button w3-hover-black">»</a>-->
-    <!--</div>-->
-  <!--</div>-->
-  
-  <!-- Modal for full size images on click-->
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display=&#39;none&#39;">
-    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption"></p>
-    </div>
-  </div>
+                            <div class="mySlides fade">
+                                <div class="numbertext">2 / 3</div>
+                                <img src="./index_files//2.jpg" class="w3-image w3-card-2 " style="max-width:50%; max-height:800px">
+                                <br>
+                                <!-- <div class="text">Caption Two</div> -->
+                            </div>
 
+                            <div class="mySlides fade">
+                                <div class="numbertext">3 / 3</div>
+                                <img src="./index_files//3.jpg" class="w3-image w3-card-2 " style="max-width:50%; max-height:800px">
+                                <br>
+                                <!-- <div class="text">Caption Three</div> -->
+                            </div>
 
-  
-  <!--<div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>-->
+                        </div>
+                        <br>
 
-<!-- End page content -->
-<footer class="w3-container w3-padding-1 w3-center w3-opacity w3-white ">
-  <p class="w3-medium">Copyright © 2019 Zhuoyue Lyu. All rights reserved. <a
-          href="mailto:zhuoyue.lyu@mail.utoronto.ca?Subject=Hello%20again" target="_top"></p>
-</footer>
+                        <!-- <img src="./index_files/me.jpg" alt="Me" class="w3-image w3-card-2 " width="40%"> -->
+                        <div class="w3-content w3-justify" style="max-width:60%">
+                            <h4 class="w3-center" style="font-size:30px ">Zhuoyue Lyu /<img src="./index_files/name.png" class="w3-center" width="125" height="40">
+                            </h4>
 
-</div>
-
-<script>
-// Script to open and close sidebar
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-</script>
+                            <!-- TODO: need to change font size dynamically -->
+                            <p class="myfont" style=" font-family: 'Open Sans', sans-serif; font-size:1.5rem;">
+                                I am a fourth-year student at the University of Toronto (St.George) specialize in Computer Science (AI track) minor in Music. I am a <a class="w3-text-red w3-ripple w3-hover-text-indigo" href="www.google.com">Software Engineer</a>,
+                                <a class="w3-text-orange w3-ripple w3-hover-text-indigo" href="www.google.com">HCI Researcher</a>, <a class="w3-text-cyan w3-ripple w3-hover-text-indigo" href="www.google.com">Singer</a>, and <a class="w3-text-light-green w3-ripple w3-hover-text-indigo"
+                                    href="www.google.com">Radio Presenter</a>. Here is my <a class="w3-text-blue w3-ripple w3-hover-text-indigo" href="./index_files/CV.pdf" target="_blank"> CV</a>.</p>
 
 
+                            <!-- End page content -->
 
-</body></html>
+                            <footer class="w3-container w3-padding-1 w3-center w3-opacity w3-white ">
+                                <p class="w3-medium">Copyright © 2021 Zhuoyue Lyu. All rights reserved.
+                                    <a href="mailto:zhuoyue.lyu@mail.utoronto.ca" target="_top"></p>
+                            </footer>
+
+
+                            <script>
+                                // Script to open and close sidebar
+                                function w3_open() {
+                                    document.getElementById("mySidebar").style.display = "block";
+                                    document.getElementById("myOverlay").style.display = "block";
+                                }
+
+                                function w3_close() {
+                                    document.getElementById("mySidebar").style.display = "none";
+                                    document.getElementById("myOverlay").style.display = "none";
+                                }
+
+                                // Modal Image Gallery
+                                function onClick(element) {
+                                    document.getElementById("img01").src = element.src;
+                                    document.getElementById("modal01").style.display = "block";
+                                    var captionText = document.getElementById("caption");
+                                    captionText.innerHTML = element.alt;
+                                }
+                                var slideIndex = 0;
+                                showSlides();
+
+                                function showSlides() {
+                                    var i;
+                                    var slides = document.getElementsByClassName("mySlides");
+                                    for (i = 0; i < slides.length; i++) {
+                                        slides[i].style.display = "none";
+                                        slides[i].style.animationDuration = "unset";
+                                        slides[i].classList.remove("w3-animate-fading");
+                                    }
+                                    slideIndex++;
+                                    if (slideIndex > slides.length) {
+                                        slideIndex = 1
+                                    }
+                                    slides[slideIndex - 1].style.display = "block";
+                                    slides[slideIndex - 1].style.animationDuration = "8s"
+                                    slides[slideIndex - 1].classList.add("w3-animate-fading");
+                                    setTimeout(showSlides, 8000); // Change image every 2 seconds
+                                }
+                            </script>
+</body>
+
+</html>
