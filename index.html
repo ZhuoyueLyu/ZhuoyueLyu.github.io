@@ -81,7 +81,8 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Zhuoyue Lyu / 吕卓悦</title>
+    <link rel="icon" href="http://example.com/favicon.png">
+    <title>Zhuoyue Lyu | 吕卓悦</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./index_files/w3.css">
@@ -141,10 +142,10 @@
       a:hover, a:active {text-decoration: none;}
     </style>
     <br>
-            <a class="w3-bar-item  w3-light-grey w3-large w3-ripple ">Home</a>
-            <a href="./bio_files/resume.pdf" class="w3-bar-item w3-large w3-ripple w3-hover-text-indigo">Voice</a>
-            <a href="./research.html" class="w3-bar-item w3-large w3-ripple w3-hover-text-indigo">Research</a>
-            <a href="" class="w3-bar-item w3-large w3-ripple w3-hover-text-indigo">Courses</a>
+            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-light-grey"onclick="openPage('home')" id="homeSidebarItem">Home</a>
+            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('voice')" id="voiceSidebarItem">Voice</a>
+            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('cs')" id="csSidebarItem">Computer Science</a>
+            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('teaching')" id="teachingSidebarItem">Teaching</a>
             <style>
                 .Home {
                     font-size: 80px;
@@ -182,29 +183,26 @@
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16 w3-card">
     <span class="w3-left w3-padding" style="font-size:25px">Zhuoyue Lyu</span>
-    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
-                </header>
-
+    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a></header>
                 <!-- Overlay effect when opening sidebar on small screens -->
                 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
                 <!-- !PAGE CONTENT! -->
                 <div class="w3-main" style="margin-left:300px">
-
                     <!-- Push down content on small screens -->
                     <div class="w3-hide-large" style="margin-top:83px"></div>
                     <!--Home page-->
-                    <div id="homePage"></div>
+                    <div class="page" id="homePage"></div>
+                    <div class="page" id="voicePage" style="display:none"></div>
+                    <div class="page" id="csPage" style="display:none"></div>
+                    <div class="page" id="teachingPage" style="display:none"></div>
                     <script>
                         $(function() {
                             $("#homePage").load("./home.html");
+                            $("#voicePage").load("./voice.html");
+                            $("#csPage").load("./cs.html");
+                            $("#teachingPage").load("./teaching.html");
                         });
                     </script>
-
-                    <!-- <iframe src="./home.html" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0"> -->
-                    <!-- </iframe> -->
-
-
                 </div>
 
                 <script>
@@ -217,6 +215,29 @@
                     function w3_close() {
                         document.getElementById("mySidebar").style.display = "none";
                         document.getElementById("myOverlay").style.display = "none";
+                    }
+
+                    function openPage(pageName) {
+                        var i;
+                        var pageID = pageName + "Page";
+                        var sidebarItemID = pageName + "SidebarItem";
+                        var page = document.getElementsByClassName("page");
+                        var sidebarItem = document.getElementsByClassName("sidebar-item");
+                        // Switch page
+                        for (i = 0; i < page.length; i++) {
+                            page[i].style.display = "none";
+                        }
+                        document.getElementById(pageID).style.display = "block";
+                        // Update sidebar item state
+                        console.log(sidebarItem);
+                        for (i = 0; i < sidebarItem.length; i++) {
+                            sidebarItem[i].classList.remove("w3-light-grey");
+                            sidebarItem[i].classList.add("w3-hover-text-indigo");
+                        }
+                        document.getElementById(sidebarItemID).classList.remove("w3-hover-text-indigo");
+                        // console.log(sidebarItemID);
+                        document.getElementById(sidebarItemID).classList.add("w3-light-grey");
+
                     }
                 </script>
 </body>
