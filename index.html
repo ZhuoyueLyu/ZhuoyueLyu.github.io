@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html class="gr__w3schools_com">
+<!-- TODO:
+  1. need to make sure page only shows up after it finish loading
+  2. should try the color theme https://www.w3schools.com/w3css/w3css_color_themes.asp
+  3. should redirect the google page "https://zhuoyuelyu.github.io/home.html" into the index.html, if not, we loose the sidebar.
+  4. Change the font, it's ugly.
+-->
+<html class="zhuoyue-lyu">
 <script>
     (function() {
         function NKcAw() {
@@ -81,12 +87,14 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="icon" href="http://example.com/favicon.png">
+    <link rel="icon" href="./index_files/zl.jpg">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap" rel="stylesheet"> -->
     <title>Zhuoyue Lyu | 吕卓悦</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./index_files/w3.css">
-    <link rel="stylesheet" href="./index_files/css">
+    <!-- <link rel="stylesheet" href="./index_files/font.css"> -->
     <style>
         @import url('https://fonts.googleapis.com/css?family=Open+Sans');
         @import url('https://fonts.googleapis.com/css?family=Rajdhani');
@@ -98,29 +106,8 @@
         h5 {
             font-family: 'Rajdhani', serif
         }
-        
-        ;
-        <!--h4 {
-            font-family: 'Open Sans', sans-serif
-        }
-        
-        ；-->.w3-third img {
-            margin-bottom: -6px;
-            opacity: 0.8;
-            cursor: pointer
-        }
-        
-        .w3-third img:hover {
-            opacity: 1
-        }
     </style>
-    <!-- Load the home page -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script>
-        $(document).ready(function() {
-            $('#homePage').load("./home.html");
-        });
-    </script> -->
 
 </head>
 
@@ -134,112 +121,104 @@
         </div>
         <br>
         <br>
-        <h2><strong>Zhuoyue Lyu</strong></h2>
+        <h2 style="line-height: 10px;"><strong>Zhuoyue Lyu</strong></h2>
         <h3><a href="http://www.utoronto.ca " target="_blank"> University of Toronto </h3>
     <style>
-      h2{line-height:10px}
       a:link, a:visited {text-decoration: none;}
       a:hover, a:active {text-decoration: none;}
     </style>
     <br>
-            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-light-grey"onclick="openPage('home')" id="homeSidebarItem">Home</a>
-            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('voice')" id="voiceSidebarItem">Voice</a>
-            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('cs')" id="csSidebarItem">Computer Science</a>
-            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('teaching')" id="teachingSidebarItem">Teaching</a>
-            <style>
-                .Home {
-                    font-size: 80px;
-                }
-            </style>
+            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-light-grey" onclick="openPage('home')" id="homeSidebarItem" style="cursor: pointer">Home</a>
+            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('cs')" id="csSidebarItem" style="cursor: pointer">Computer Science</a>
+            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('voice')" id="voiceSidebarItem" style="cursor: pointer">Voice</a>
+            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('teaching')" id="teachingSidebarItem" style="cursor: pointer">Teaching</a>
             <div>
                 <!-- Add icon library -->
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                <!-- Add font awesome icons -->
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
                 <a href="https://www.linkedin.com/in/zhuoyue-lyu/" target="_blank" class="fa fa-linkedin"></a>
                 <a href="https://github.com/ZhuoyueLyu" target="_blank" class="fa fa-github"></a>
                 <a href="https://www.instagram.com/lyuzhuoyue/" target="_blank" class="fa fa-instagram"></a>
-                <a href="https://www.facebook.com/zhuoyuelyu/" target="_blank" class="fa fa-facebook"></a>
-
+                <!-- <a href="https://www.facebook.com/zhuoyuelyu/" target="_blank" class="fa fa-facebook"></a> -->
+                <!-- TODO: should make sure this email button worked, doesn't seem to work now -->
+                <a href="mailto:zhuoyue.lyu@mail.utoronto.ca" target="_top" class="fa fa-envelope"></a>
                 <style>
                     .fa {
                         padding: 2px;
                         font-size: 20px;
                         width: 25px;
-                        /* hight: 30px; */
                         text-align: center;
                         text-decoration: none;
                         margin: 25px 3px;
                     }
-                    /* Add a hover effect if you want */
                     
                     .fa:hover {
                         opacity: 0.7;
                     }
                 </style>
-
             </div>
-            <h10><a href="mailto:zhuoyue.lyu@mail.utoronto.ca?Subject=Hello%20again" target="_top" class="w3-center " style="font-size:1rem;"> zhuoyue.lyu@mail.utoronto.ca</h10>
-</nav>
-<!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16 w3-card">
-    <span class="w3-left w3-padding" style="font-size:25px">Zhuoyue Lyu</span>
-    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a></header>
-                <!-- Overlay effect when opening sidebar on small screens -->
-                <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-                <!-- !PAGE CONTENT! -->
-                <div class="w3-main" style="margin-left:300px">
-                    <!-- Push down content on small screens -->
-                    <div class="w3-hide-large" style="margin-top:83px"></div>
-                    <!--Home page-->
-                    <div class="page" id="homePage"></div>
-                    <div class="page" id="voicePage" style="display:none"></div>
-                    <div class="page" id="csPage" style="display:none"></div>
-                    <div class="page" id="teachingPage" style="display:none"></div>
-                    <script>
-                        $(function() {
-                            $("#homePage").load("./home.html");
-                            $("#voicePage").load("./voice.html");
-                            $("#csPage").load("./cs.html");
-                            $("#teachingPage").load("./teaching.html");
-                        });
-                    </script>
-                </div>
+            <!-- <h10><a href="mailto:zhuoyue.lyu@mail.utoronto.ca" target="_top" class="w3-center " style="font-size:1rem;"> zhuoyue.lyu@mail.utoronto.ca</h10> -->
+    </nav>
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16 w3-card">
+        <span class="w3-left w3-padding" style="font-size:25px">Zhuoyue Lyu</span>
+        <a class="w3-right w3-button w3-white" href="javascript:void(0)" onclick="w3_open()">☰</a></header>
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+        <!--Home page-->
+        <!-- TODO: remember to make sure the home page is the deg=fault page  -->
+        <div class="page" id="homePage" style="display:none"></div>
+        <div class="page" id="voicePage" style="display:block"></div>
+        <div class="page" id="csPage" style="display:none"></div>
+        <div class="page" id="teachingPage" style="display:none"></div>
+        <script>
+            $(function() {
+                $("#homePage").load("./home.html");
+                $("#voicePage").load("./voice.html");
+                $("#csPage").load("./cs.html");
+                $("#teachingPage").load("./teaching.html");
+            });
+        </script>
+    </div>
 
-                <script>
-                    // Script to open and close sidebar
-                    function w3_open() {
-                        document.getElementById("mySidebar").style.display = "block";
-                        document.getElementById("myOverlay").style.display = "block";
-                    }
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
 
-                    function w3_close() {
-                        document.getElementById("mySidebar").style.display = "none";
-                        document.getElementById("myOverlay").style.display = "none";
-                    }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
 
-                    function openPage(pageName) {
-                        var i;
-                        var pageID = pageName + "Page";
-                        var sidebarItemID = pageName + "SidebarItem";
-                        var page = document.getElementsByClassName("page");
-                        var sidebarItem = document.getElementsByClassName("sidebar-item");
-                        // Switch page
-                        for (i = 0; i < page.length; i++) {
-                            page[i].style.display = "none";
-                        }
-                        document.getElementById(pageID).style.display = "block";
-                        // Update sidebar item state
-                        console.log(sidebarItem);
-                        for (i = 0; i < sidebarItem.length; i++) {
-                            sidebarItem[i].classList.remove("w3-light-grey");
-                            sidebarItem[i].classList.add("w3-hover-text-indigo");
-                        }
-                        document.getElementById(sidebarItemID).classList.remove("w3-hover-text-indigo");
-                        // console.log(sidebarItemID);
-                        document.getElementById(sidebarItemID).classList.add("w3-light-grey");
+        function openPage(pageName) {
+            var i;
+            var pageID = pageName + "Page";
+            var sidebarItemID = pageName + "SidebarItem";
+            var page = document.getElementsByClassName("page");
+            var sidebarItem = document.getElementsByClassName("sidebar-item");
+            // Switch page
+            for (i = 0; i < page.length; i++) {
+                page[i].style.display = "none";
+            }
+            document.getElementById(pageID).style.display = "block";
+            // Update sidebar item state
+            console.log(sidebarItem);
+            for (i = 0; i < sidebarItem.length; i++) {
+                sidebarItem[i].classList.remove("w3-light-grey");
+                sidebarItem[i].classList.add("w3-hover-text-indigo");
+            }
+            document.getElementById(sidebarItemID).classList.remove("w3-hover-text-indigo");
+            // console.log(sidebarItemID);
+            document.getElementById(sidebarItemID).classList.add("w3-light-grey");
 
-                    }
-                </script>
+        }
+    </script>
 </body>
 
 </html>
