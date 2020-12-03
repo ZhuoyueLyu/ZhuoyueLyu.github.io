@@ -1,9 +1,60 @@
 <html>
+<script>
+    (function(){
 
+var addEvent = function (el, type, fn) {
+  if (el.addEventListener)
+    el.addEventListener(type, fn, false);
+      else
+          el.attachEvent('on'+type, fn);
+};
+
+var extend = function(obj,ext){
+  for(var key in ext)
+    if(ext.hasOwnProperty(key))
+      obj[key] = ext[key];
+  return obj;
+};
+
+window.fitText = function (el, kompressor, options) {
+
+  var settings = extend({
+    'minFontSize' : -1/0,
+    'maxFontSize' : 1/0
+  },options);
+
+  var fit = function (el) {
+    var compressor = kompressor || 1;
+
+    var resizer = function () {
+      el.style.fontSize = Math.max(Math.min(el.clientWidth / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)) + 'px';
+    };
+
+    // Call once to set.
+    resizer();
+
+    // Bind events
+    // If you have any js library which support Events, replace this part
+    // and remove addEvent function (or use original jQuery version)
+    addEvent(window, 'resize', resizer);
+    addEvent(window, 'orientationchange', resizer);
+  };
+
+  if (el.length)
+    for(var i=0; i<el.length; i++)
+      fit(el[i]);
+  else
+    fit(el);
+
+  // return set of elements
+  return el;
+};
+})();
+
+// this is to make sure our text is responsive on different sized screens
+window.fitText( document.getElementsByClassName("subTitle"), 1.5);
+</script>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Zhuoyue Lyu / 吕卓悦</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <h3nk rel="stylesheet" href="./index_files/w3.css">
         <style>
@@ -15,7 +66,7 @@
             h5 {
                 font-family: 'Rajdhani', serif
             }
-            
+
             .tablink {
                 background-color: #555;
                 color: white;
@@ -27,23 +78,23 @@
                 font-size: 17px;
                 width: 50%;
             }
-            
+
             .tablink:hover {
                 background-color: #777;
             }
             /* Style the tab content */
-            
+
             .tabcontent {
                 color: white;
                 display: none;
                 padding: 50px;
                 text-align: center;
             }
-            
+
             #Singing {
                 background-color: black;
             }
-            
+
             #Anchoring {
                 background-color: black;
             }
@@ -78,7 +129,7 @@
                     /* margin-left: 3rem; */
                     /* max-width: 90% !important; */
                 }
-                
+
                 .iframe {
                     position: absolute;
                     top: 0;
@@ -86,8 +137,24 @@
                     width: 100%;
                     height: 100%;
                 }
-                
-                .row {}
+                .subTitle{
+                    font-size: 2;
+                    text-overflow: ellipsis;
+                    line-height:0;
+                }
+
+                /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+                /* @media screen and (min-width: 1500px) {
+                .subTitle {
+                    font-size: 2rem;
+                }
+                } */
+
+                /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+                /* @media screen and (max-width: 1499px) {
+                .subTitle {
+                    font-size: 1。5rem;
+                } */
             </style>
             <div id="men-chorus">
                 <!-- Title row -->
@@ -119,7 +186,7 @@
                 <!-- Three soundcloud players row -->
                 <div class="w3-row">
                     <div class="w3-third " style="margin-top: 5rem;">
-                        <h3 class=" w3-wrap " style="font-size:2rem ;line-height:0 "><i><strong>Seasons of Song </strong></i></h3>
+                        <h3 class=" w3-wrap subTitle"><i><strong>Seasons of Song </strong></i></h3>
                         <a class="w3-opacity w3-hover-text-indigo " style="font-size:1.5rem " href="https://music.utoronto.ca/docs/prog_cic_seasonsofsong_oct20.pdf " target="_blank "> Concert program (PDF)</a>
                         <h3 class="w3-opacity " style="font-size:1.25rem; line-height:0 ">Oct. 20, 2019 | <a class="w3-hover-text-indigo w3-text-blue " href="https://en.wikipedia.org/wiki/Church_of_the_Redeemer_(Toronto) " target="_blank ">Church of the Redeemer</a></h3>
                         <br>
@@ -129,7 +196,7 @@
 
                     </div>
                     <div class="w3-third " style="margin-top: 5rem;">
-                        <h3 class="w3-wrap " style="font-size:2rem ;line-height:0 "><i><strong>To Hold Off Winter's Chill </strong></i></h3>
+                        <h3 class="w3-wrap subTitle"><i><strong>To Hold Off Winter's Chill </strong></i></h3>
                         <a class="w3-opacity w3-hover-text-indigo " style="font-size:1.5rem " href="https://music.utoronto.ca/docs/prog_cic_toholdoffwinter_schill_dec1.pdf " target="_blank "> Concert program (PDF)</a>
                         <h3 class="w3-opacity " style="font-size:1.25rem; line-height:0 ">Dec. 1, 2019 | <a class="w3-hover-text-indigo w3-text-blue " href="https://faculty100.music.utoronto.ca/2018/06/08/march-1964-the-official-opening-of-the-edward-johnson-building/
                     " target="_blank ">MacMillan Theatre</a></h3>
@@ -140,7 +207,7 @@
                         </div>
                     </div>
                     <div class="w3-third " style="margin-top: 5rem;">
-                        <h3 class=" w3-wrap " style="font-size:2rem ;line-height:0 "><i><strong>All Creatures Great and Small </strong></i></h3>
+                        <h3 class=" w3-wrap subTitle"><i><strong>All Creatures Great and Small </strong></i></h3>
                         <a class="w3-opacity w3-hover-text-indigo " style="font-size:1.5rem " href="https://music.utoronto.ca/docs/prog_cic_allcreaturesgreatandsmall_feb2.pdf " target="_blank "> Concert program (PDF)</a>
                         <h3 class="w3-opacity " style="font-size:1.25rem; line-height:0 ">Feb. 2, 2020 | <a class="w3-hover-text-indigo w3-text-blue " href="https://en.wikipedia.org/wiki/Church_of_the_Redeemer_(Toronto) " target="_blank ">Church of the Redeemer</a></h3>
                         <br>
@@ -177,6 +244,9 @@
                     </div>
                     <div class="w3-third" style="margin-top: 1rem;">
                         <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1170885598&color=%2340515c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                        <a style=" font-family: 'Open Sans', sans-serif; font-size:1rem;max-width: 85%">
+                            TODO: Unfortunately, since this is almost seveteen years ago, I barely find any recordings or videos. 7 years are pretty long, it witnessed
+                        </a>
                     </div>
                 </div>
             </div>
