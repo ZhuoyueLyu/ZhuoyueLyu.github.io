@@ -1,12 +1,125 @@
 <html>
+<script>
+    (function(){
 
+var addEvent = function (el, type, fn) {
+  if (el.addEventListener)
+    el.addEventListener(type, fn, false);
+      else
+          el.attachEvent('on'+type, fn);
+};
+
+var extend = function(obj,ext){
+  for(var key in ext)
+    if(ext.hasOwnProperty(key))
+      obj[key] = ext[key];
+  return obj;
+};
+
+window.fitText = function (el, kompressor, options) {
+
+  var settings = extend({
+    'minFontSize' : -1/0,
+    'maxFontSize' : 1/0
+  },options);
+
+  var fit = function (el) {
+    var compressor = kompressor || 1;
+
+    var resizer = function () {
+      el.style.fontSize = Math.max(Math.min(el.clientWidth / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)) + 'px';
+    };
+
+    // Call once to set.
+    resizer();
+
+    // Bind events
+    // If you have any js library which support Events, replace this part
+    // and remove addEvent function (or use original jQuery version)
+    addEvent(window, 'resize', resizer);
+    addEvent(window, 'orientationchange', resizer);
+  };
+
+  if (el.length)
+    for(var i=0; i<el.length; i++)
+      fit(el[i]);
+  else
+    fit(el);
+
+  // return set of elements
+  return el;
+};
+})();
+
+// this is to make sure our text is responsive on different sized screens
+window.fitText( document.getElementsByClassName("subTitle"), 1.5);
+</script>
 <head>
-    <script>
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <h3nk rel="stylesheet" href="./index_files/w3.css">
+        <style>
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                font-family: 'Rajdhani', serif
+            }
+        </style>
 </head>
 
 <body>
-    <img src="./index_files/2.jpg" alt="Me" class="w3-image w3-card-2 " width="40%">
+    <div class=" w3-container w3-white w3-center w3-text-black w3-animate-opacity w3-padding-32" style="max-height:100%">
+        <br><br><br>
+        <div class="w3-content w3-justify " style="max-width:85%">
+            <style>
+                .video_wrapper {
+                    position: relative;
+                    padding-bottom: 53.4375%;
+                    max-width: 95%;
+                }
+
+                .iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                .subTitle{
+                    font-size: 2;
+                    text-overflow: ellipsis;
+                    line-height:0;
+                }
+            </style>
+            <div id="men-chorus">
+                <!-- Title row -->
+                <div class="w3-row">
+                    <span class="w3-tag w3-blue">Author</span>
+                    <h2 class="w3-wrap" style="font-size:2.5rem"><strong>Sensing AI</strong><span class="w3-opacity" style="font-size:1.90rem "> | In Progress</span></h2>
+                    <h2 class="w3-wrap" style="font-size:1.5rem"><strong>Zhuoyue Lyu</strong><span class="w3-opacity" style="font-size:1.2rem "> | Aiming at International Computer Music Conference (ICMC) 2021</span></h2>
+                </div>
+                <!-- video row -->
+                <div class="w3-row">
+                    <div class="w3-twothird" style="margin-top: 1rem;">
+                        <div class="video_wrapper w3-card-4 ">
+                            <iframe class="iframe " src="https://www.youtube.com/embed/P0ebqCZXnow" frameborder="0 " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture " allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="w3-third" style="margin-top: 1rem;">
+                        <!-- The following window is the karaoke iframe -->
+                        <!-- <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1170885598&color=%2340515c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe> -->
+                        <a style=" font-family: 'Open Sans', sans-serif; font-size:1.5rem;max-width: 85%">
+                            <p>To provide people with auditory and visual intuition about AI, I sonified a neural network by mapping loss and accuracy to oscillators' frequencies and visualized it using an interactive force-directed graph in Virtual Reality (VR)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <footer class="w3-container w3-padding-1 w3-center w3-opacity w3-white ">
+                <p class="w3-medium ">Copyright © 2021 Zhuoyue Lyu. All rights reserved.
+                    <a href="mailto:zhuoyue.lyu@mail.utoronto.ca " target="_top "></p>
+            </footer>
 
 </body>
 

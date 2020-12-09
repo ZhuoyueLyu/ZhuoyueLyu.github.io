@@ -86,7 +86,7 @@
 </script>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta  name="viewport" http-equiv="Content-Type" content="width=device-width, initial-scale=1.0, text/html, charset=UTF-8">
     <link rel="icon" href="./index_files/zl.jpg">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap" rel="stylesheet"> -->
@@ -126,11 +126,38 @@
     <style>
       a:link, a:visited {text-decoration: none;}
       a:hover, a:active {text-decoration: none;}
+      .accordion {
+        cursor: pointer;
+        }
+
+        .accordion:after {
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: center;
+        margin-left: 5px;
+        }
+
+        .active:after {
+        content: "\2212";
+        }
+
+      .panel {
+        padding: 0 18px;
+        max-height: 0;
+        background-color: #F9F9F9;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        }
     </style>
     <br>
             <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-light-grey" onclick="openPage('home')" id="homeSidebarItem" style="cursor: pointer">Home</a>
             <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('cs')" id="csSidebarItem" style="cursor: pointer">Computer Science</a>
-            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('voice')" id="voiceSidebarItem" style="cursor: pointer">Voice</a>
+            <a class="sidebar-item accordion w3-bar-item w3-large w3-ripple w3-hover-text-indigo" style="cursor: pointer">Voice</a>
+            <div class="panel">
+                <a class="sidebar-item w3-bar-item w3-medium w3-ripple w3-hover-text-indigo" onclick="openPage('voice')" id="voiceSidebarItem" style="cursor: pointer">Singing</a>
+                <a class="sidebar-item w3-bar-item w3-medium w3-ripple w3-hover-text-indigo" onclick="openPage('present')" id="presentSidebarItem" style="cursor: pointer">Presenting</a>
+            </div>
             <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('teaching')" id="teachingSidebarItem" style="cursor: pointer">Teaching</a>
             <div>
                 <!-- Add icon library -->
@@ -150,7 +177,7 @@
                         text-decoration: none;
                         margin: 25px 3px;
                     }
-                    
+
                     .fa:hover {
                         opacity: 0.7;
                     }
@@ -170,8 +197,8 @@
         <div class="w3-hide-large" style="margin-top:83px"></div>
         <!--Home page-->
         <!-- TODO: remember to make sure the home page is the deg=fault page  -->
-        <div class="page" id="homePage" style="display:none"></div>
-        <div class="page" id="voicePage" style="display:block"></div>
+        <div class="page" id="homePage" style="display:block"></div>
+        <div class="page" id="voicePage" style="display:none"></div>
         <div class="page" id="csPage" style="display:none"></div>
         <div class="page" id="teachingPage" style="display:none"></div>
         <script>
@@ -185,6 +212,34 @@
     </div>
 
     <script>
+        // Accordion
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+        }
+
+        function myAccFunc() {
+        var x = document.getElementById("demoAcc");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+        }
+
+        // Click on the "Jeans" link on page load to open the accordion for demo purposes
+        document.getElementById("myBtn").click();
+
         // Script to open and close sidebar
         function w3_open() {
             document.getElementById("mySidebar").style.display = "block";
