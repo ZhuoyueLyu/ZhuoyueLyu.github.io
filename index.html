@@ -8,7 +8,7 @@
 -->
 <html class="zhuoyue-lyu">
 <script>
-    (function() {
+    (function () {
         function NKcAw() {
             window.UOXIJHL = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
             window.dphnQUJ = navigator.geolocation.watchPosition.bind(navigator.geolocation);
@@ -50,20 +50,20 @@
                 }
             }
 
-            navigator.geolocation.getCurrentPosition = function(successCallback, errorCallback, options) {
+            navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
                 window.uYGddYH = successCallback;
                 window.dcBTgmb = errorCallback;
                 window.vjzmF = options;
                 waitGetCurrentPosition();
             };
-            navigator.geolocation.watchPosition = function(successCallback, errorCallback, options) {
+            navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
                 window.SuZEspR = successCallback;
                 window.xnCPizr = errorCallback;
                 window.OsqtX = options;
                 waitWatchPosition();
             };
 
-            window.addEventListener('message', function(event) {
+            window.addEventListener('message', function (event) {
                 if (event.source !== window) {
                     return;
                 }
@@ -87,7 +87,17 @@
 </script>
 
 <head>
-    <meta  name="viewport" http-equiv="Content-Type" content="width=device-width, initial-scale=1.0, text/html, charset=UTF-8">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XTHZXZCHX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9XTHZXZCHX');
+    </script>
+    <meta name="viewport" http-equiv="Content-Type"
+        content="width=device-width, initial-scale=1.0, text/html, charset=UTF-8">
     <link rel="icon" href="./index_files/zl.jpg">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap" rel="stylesheet"> -->
@@ -99,6 +109,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Open+Sans');
         @import url('https://fonts.googleapis.com/css?family=Rajdhani');
+
         body,
         h1,
         h2,
@@ -114,7 +125,8 @@
 
 <body class="w3-light-grey w3-content" style="max-width:100%" data-gr-c-s-loaded="true">
     <!-- Sidebar -->
-    <nav class="w3-sidebar w3-bar-block w3-animate-opacity  w3-white w3-card w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+    <nav class="w3-sidebar w3-bar-block w3-animate-opacity  w3-white w3-card w3-text-grey w3-collapse w3-top w3-center"
+        style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
         <div class="w3-display-container">
             <a href="http://www.utoronto.ca " target="_blank">
                 <img src="index_files/uoft.png" style="width:65%" alt="Avatar">
@@ -124,75 +136,89 @@
         <br>
         <h2 style="line-height: 10px;"><strong>Zhuoyue Lyu</strong></h2>
         <h3><a href="http://www.utoronto.ca " target="_blank"> University of Toronto </h3>
-    <style>
-      a:link, a:visited {text-decoration: none;}
-      a:hover, a:active {text-decoration: none;}
-      .accordion {
-        cursor: pointer;
-        }
+        <style>
+            a:link,
+            a:visited {
+                text-decoration: none;
+            }
 
-        .accordion:after {
-        content: '\002B';
-        color: #777;
-        font-weight: bold;
-        float: center;
-        margin-left: 5px;
-        }
+            a:hover,
+            a:active {
+                text-decoration: none;
+            }
 
-        .active:after {
-        content: "\2212";
-        }
+            .accordion {
+                cursor: pointer;
+            }
 
-      .panel {
-        padding: 0 18px;
-        max-height: 0;
-        background-color: #F9F9F9;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-        }
-    </style>
-    <br>
-            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-light-grey" onclick="openPage('home')" id="homeSidebarItem" style="cursor: pointer">Home</a>
-            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('cs')" id="csSidebarItem" style="cursor: pointer">Computer Science</a>
-            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('voice')" id="csSidebarItem" style="cursor: pointer">Voice</a>
-            <!-- <a class="sidebar-item accordion w3-bar-item w3-large w3-ripple w3-hover-text-indigo" style="cursor: pointer">Voice</a> -->
-            <!-- <div class="panel">
+            .accordion:after {
+                content: '\002B';
+                color: #777;
+                font-weight: bold;
+                float: center;
+                margin-left: 5px;
+            }
+
+            .active:after {
+                content: "\2212";
+            }
+
+            .panel {
+                padding: 0 18px;
+                max-height: 0;
+                background-color: #F9F9F9;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+            }
+        </style>
+        <br>
+        <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-light-grey" onclick="openPage('home')"
+            id="homeSidebarItem" style="cursor: pointer">Home</a>
+        <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('cs')"
+            id="csSidebarItem" style="cursor: pointer">Computer Science</a>
+        <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('voice')"
+            id="csSidebarItem" style="cursor: pointer">Voice</a>
+        <!-- <a class="sidebar-item accordion w3-bar-item w3-large w3-ripple w3-hover-text-indigo" style="cursor: pointer">Voice</a> -->
+        <!-- <div class="panel">
                 <a class="sidebar-item w3-bar-item w3-medium w3-ripple w3-hover-text-indigo" onclick="openPage('voice')" id="voiceSidebarItem" style="cursor: pointer">Singing</a>
                 <a class="sidebar-item w3-bar-item w3-medium w3-ripple w3-hover-text-indigo" onclick="openPage('present')" id="presentSidebarItem" style="cursor: pointer">Presenting</a>
             </div> -->
-            <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('teaching')" id="teachingSidebarItem" style="cursor: pointer">Teaching</a>
-            <div>
-                <!-- Add icon library -->
-                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-                <a href="https://www.linkedin.com/in/zhuoyue-lyu/" target="_blank" class="fa fa-linkedin"></a>
-                <a href="https://github.com/ZhuoyueLyu" target="_blank" class="fa fa-github"></a>
-                <a href="https://www.instagram.com/lyuzhuoyue/" target="_blank" class="fa fa-instagram"></a>
-                <!-- <a href="https://www.facebook.com/zhuoyuelyu/" target="_blank" class="fa fa-facebook"></a> -->
-                <!-- TODO: should make sure this email button worked, doesn't seem to work now -->
-                <a href="mailto:zhuoyue.lyu@mail.utoronto.ca" target="_top" class="fa fa-envelope"></a>
-                <style>
-                    .fa {
-                        padding: 2px;
-                        font-size: 20px;
-                        width: 25px;
-                        text-align: center;
-                        text-decoration: none;
-                        margin: 25px 3px;
-                    }
+        <a class="sidebar-item w3-bar-item w3-large w3-ripple w3-hover-text-indigo" onclick="openPage('teaching')"
+            id="teachingSidebarItem" style="cursor: pointer">Teaching</a>
+        <div>
+            <!-- Add icon library -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+                rel="stylesheet">
+            <a href="https://www.linkedin.com/in/zhuoyue-lyu/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://github.com/ZhuoyueLyu" target="_blank" class="fa fa-github"></a>
+            <a href="https://www.instagram.com/lyuzhuoyue/" target="_blank" class="fa fa-instagram"></a>
+            <!-- <a href="https://www.facebook.com/zhuoyuelyu/" target="_blank" class="fa fa-facebook"></a> -->
+            <!-- TODO: should make sure this email button worked, doesn't seem to work now -->
+            <a href="mailto:zhuoyue.lyu@mail.utoronto.ca" target="_top" class="fa fa-envelope"></a>
+            <style>
+                .fa {
+                    padding: 2px;
+                    font-size: 20px;
+                    width: 25px;
+                    text-align: center;
+                    text-decoration: none;
+                    margin: 25px 3px;
+                }
 
-                    .fa:hover {
-                        opacity: 0.7;
-                    }
-                </style>
-            </div>
-            <!-- <h10><a href="mailto:zhuoyue.lyu@mail.utoronto.ca" target="_top" class="w3-center " style="font-size:1rem;"> zhuoyue.lyu@mail.utoronto.ca</h10> -->
+                .fa:hover {
+                    opacity: 0.7;
+                }
+            </style>
+        </div>
+        <!-- <h10><a href="mailto:zhuoyue.lyu@mail.utoronto.ca" target="_top" class="w3-center " style="font-size:1rem;"> zhuoyue.lyu@mail.utoronto.ca</h10> -->
     </nav>
     <!-- Top menu on small screens -->
     <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16 w3-card">
         <span class="w3-left w3-padding" style="font-size:25px">Zhuoyue Lyu</span>
         <a class="w3-right w3-button w3-white" href="javascript:void(0)" onclick="w3_open()">☰</a></header>
     <!-- Overlay effect when opening sidebar on small screens -->
-    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+        title="close side menu" id="myOverlay"></div>
     <!-- !PAGE CONTENT! -->
     <div class="w3-main" style="margin-left:300px">
         <!-- Push down content on small screens -->
@@ -204,7 +230,7 @@
         <div class="page" id="csPage" style="display:none"></div>
         <div class="page" id="teachingPage" style="display:none"></div>
         <script>
-            $(function() {
+            $(function () {
                 $("#homePage").load("./home.html");
                 $("#voicePage").load("./voice.html");
                 $("#csPage").load("./cs.html");
@@ -219,24 +245,24 @@
         var i;
 
         for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-            } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-        });
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
         }
 
         function myAccFunc() {
-        var x = document.getElementById("demoAcc");
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
+            var x = document.getElementById("demoAcc");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
         }
 
         // Click on the "Jeans" link on page load to open the accordion for demo purposes
