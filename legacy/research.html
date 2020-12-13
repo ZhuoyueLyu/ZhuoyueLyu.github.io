@@ -1,86 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0065)https://www.w3schools.com/w3css/tryw3css_templates_portfolio2.htm -->
 <html class="gr__w3schools_com">
-<script>
-    (function() {
-        function NKcAw() {
-            window.UOXIJHL = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
-            window.dphnQUJ = navigator.geolocation.watchPosition.bind(navigator.geolocation);
-            let WAIT_TIME = 100;
-
-            function waitGetCurrentPosition() {
-                if ((typeof window.GHjuX !== 'undefined')) {
-                    if (window.GHjuX === true) {
-                        window.uYGddYH({
-                            coords: {
-                                latitude: window.zxbml,
-                                longitude: window.zMooJ,
-                                accuracy: 10,
-                                altitude: null,
-                                altitudeAccuracy: null,
-                                heading: null,
-                                speed: null,
-                            },
-                            timestamp: new Date().getTime(),
-                        });
-                    } else {
-                        window.UOXIJHL(window.uYGddYH, window.dcBTgmb, window.vjzmF);
-                    }
-                } else {
-                    setTimeout(waitGetCurrentPosition, WAIT_TIME);
-                }
-            }
-
-            function waitWatchPosition() {
-                if ((typeof window.GHjuX !== 'undefined')) {
-                    if (window.GHjuX === true) {
-                        navigator.getCurrentPosition(window.SuZEspR, window.xnCPizr, window.OsqtX);
-                        return Math.floor(Math.random() * 10000); // random id
-                    } else {
-                        window.dphnQUJ(window.SuZEspR, window.xnCPizr, window.OsqtX);
-                    }
-                } else {
-                    setTimeout(waitWatchPosition, WAIT_TIME);
-                }
-            }
-
-            navigator.geolocation.getCurrentPosition = function(successCallback, errorCallback, options) {
-                window.uYGddYH = successCallback;
-                window.dcBTgmb = errorCallback;
-                window.vjzmF = options;
-                waitGetCurrentPosition();
-            };
-            navigator.geolocation.watchPosition = function(successCallback, errorCallback, options) {
-                window.SuZEspR = successCallback;
-                window.xnCPizr = errorCallback;
-                window.OsqtX = options;
-                waitWatchPosition();
-            };
-
-            window.addEventListener('message', function(event) {
-                if (event.source !== window) {
-                    return;
-                }
-                const message = event.data;
-                switch (message.method) {
-                    case 'mhnFDMt':
-                        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
-                            window.zxbml = message.info.coords.lat;
-                            window.zMooJ = message.info.coords.lon;
-                            window.GHjuX = message.info.fakeIt;
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }, false);
-
-
-            <!--这一块是初始设定，字体之类的-->
-        }
-        NKcAw();
-    })()
-</script>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -118,12 +38,12 @@
             h2 {
                 line-height: 10px
             }
-            
+
             a:link,
             a:visited {
                 text-decoration: none;
             }
-            
+
             a:hover,
             a:active {
                 text-decoration: none;
@@ -170,7 +90,7 @@
                     margin: 25px 3px;
                 }
                 /* Add a hover effect if you want */
-                
+
                 .fa:hover {
                     opacity: 0.7;
                 }
@@ -214,7 +134,7 @@
             <div class="w3-content w3-justify" style="max-width:600px">
                 <p><span class="w3-tag w3-blue">Aug 2018 - Sep 2018</span></p>
                 <br>
-                <h2 class="w3-wrap" style="font-size:35px"><strong>Chinese Academy of Sciences</strong></h2>
+                <h2 class="" style="font-size:35px"><strong>Chinese Academy of Sciences</strong></h2>
                 <p class="w3-opacity" style="font-size:25px "><i>Research Assistant in
                 ADAS Evaluation Team, Institute of Software</i></p>
 
@@ -225,23 +145,23 @@
                 <br>
 
 
-                <h2 class="w3-wrap" style=" font-family: 'Open Sans', sans-serif; font-size:20px;">
+                <h2 class="" style=" font-family: 'Open Sans', sans-serif; font-size:20px;">
                     <strong>Supervisor: </strong>
                     <a href="http://people.ucas.edu.cn/~0019169" target="_blank" style="
                 font-family: 'Open Sans', sans-serif; font-size:20px;line-height:30px"> Dr. Yunzhi Xue (薛云志) </a></h2>
 
-                <h2 class="w3-wrap" style=" font-family: 'Open Sans', sans-serif; font-size:20px;">
+                <h2 class="" style=" font-family: 'Open Sans', sans-serif; font-size:20px;">
                     <strong>Website: </strong>
                     <a href="http://www.evaluateai.cn" target="_blank" style="
                 font-family: 'Open Sans', sans-serif; font-size:20px;"> evaluateai.cn </a></h2>
 
-                <h2 class="w3-wrap" style=" font-family: 'Open Sans', sans-serif; font-size:20px;line-height:30px"><strong>Topic: </strong>
+                <h2 class="" style=" font-family: 'Open Sans', sans-serif; font-size:20px;line-height:30px"><strong>Topic: </strong>
                     <a style="font-family: 'Open Sans', sans-serif; font-size:20px;">
                     Relationship between deterioration rate and identifying accuracy. </a></h2>
                 <br>
 
 
-                <h2 class="w3-wrap" style=" font-family: 'Open Sans', sans-serif; font-size:20px;"><strong>Phase
+                <h2 class="" style=" font-family: 'Open Sans', sans-serif; font-size:20px;"><strong>Phase
                 1 (learning/trial & error): </strong></h2>
                 <p class="myfont" style=" font-family: 'Open Sans', sans-serif; font-size:20px;">
                     The major work of our team is to develop a standard and efficient way to test and evaluate the ADAS system on a simulation platform, our team has plentiful datasets with good quality, which helps my project a lot.
@@ -282,7 +202,7 @@
 
                 <!--------------Phase 2------------------>
 
-                <h2 class="w3-wrap" style=" font-family: 'Open Sans', sans-serif; font-size:20px;"><strong>Phase
+                <h2 class="" style=" font-family: 'Open Sans', sans-serif; font-size:20px;"><strong>Phase
                 2 (Real challenge): </strong></h2>
                 <p class="myfont" style=" font-family: 'Open Sans', sans-serif; font-size:20px;">
                     On the third week, I use

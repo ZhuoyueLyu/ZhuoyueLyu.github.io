@@ -1,117 +1,21 @@
 <html>
-<script>
-    (function () {
-
-        var addEvent = function (el, type, fn) {
-            if (el.addEventListener)
-                el.addEventListener(type, fn, false);
-            else
-                el.attachEvent('on' + type, fn);
-        };
-
-        var extend = function (obj, ext) {
-            for (var key in ext)
-                if (ext.hasOwnProperty(key))
-                    obj[key] = ext[key];
-            return obj;
-        };
-
-        window.fitText = function (el, kompressor, options) {
-
-            var settings = extend({
-                'minFontSize': -1 / 0,
-                'maxFontSize': 1 / 0
-            }, options);
-
-            var fit = function (el) {
-                var compressor = kompressor || 1;
-
-                var resizer = function () {
-                    el.style.fontSize = Math.max(Math.min(el.clientWidth / (compressor * 10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)) + 'px';
-                };
-
-                // Call once to set.
-                resizer();
-
-                // Bind events
-                // If you have any js library which support Events, replace this part
-                // and remove addEvent function (or use original jQuery version)
-                addEvent(window, 'resize', resizer);
-                addEvent(window, 'orientationchange', resizer);
-            };
-
-            if (el.length)
-                for (var i = 0; i < el.length; i++)
-                    fit(el[i]);
-            else
-                fit(el);
-
-            // return set of elements
-            return el;
-        };
-    })();
-
-    // this is to make sure our text is responsive on different sized screens
-    window.fitText(document.getElementsByClassName("subTitle"), 1.5);
-</script>
 
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XTHZXZCHX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-9XTHZXZCHX');
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <h3nk rel="stylesheet" href="./index_files/w3.css">
-        <style>
-            body,
-            h1,
-            h2,
-            h3,
-            h4,
-            h5 {
-                font-family: 'Rajdhani', serif
-            }
-        </style>
 </head>
 
 <body>
     <div class=" w3-container w3-white w3-center w3-text-black w3-animate-opacity w3-padding-32"
         style="max-height:100%">
-        <br><br><br>
         <div class="w3-content w3-justify " style="max-width:85%">
-            <style>
-                .video_wrapper {
-                    position: relative;
-                    padding-bottom: 53.4375%;
-                    max-width: 95%;
-                }
-
-                .iframe {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                }
-
-                .subTitle {
-                    font-size: 2;
-                    text-overflow: ellipsis;
-                    line-height: 0;
-                }
-            </style>
             <div id="poland">
                 <!-- Title row -->
                 <div class="w3-row">
                     <span class="w3-tag w3-blue">Katowice, Poland</span>
-                    <h2 class="w3-wrap" style="font-size:2.5rem"><strong>Global Volunteer</strong><span class="w3-opacity"
-                            style="font-size:1.90rem "> | Teaching Chinese & Sharing lture</span></h2>
-                    <h5 style="line-height: 0;"> AIESEC Poland | May. 2018 - Jun. 2018 </h5>
-                    <!-- <h2 class="w3-wrap" style="font-size:1.5rem">/h2> -->
+                    <h2 class="secTitle "><strong>Global Volunteer</strong><span class="secTitle2 w3-opacity"> | Teach
+                            Chinese & Share Culture</span>
+                    </h2>
+                    <h5 class="subTitle3Teaching"> AIESEC Poland | May. 2018 - Jun. 2018 </h5>
                 </div>
                 <!-- video row -->
                 <div class="w3-row">
@@ -146,46 +50,49 @@
                 </div>
 
             </div>
-            <div class="w3-row" style="margin-top: 7rem;">
-                <div id="EZ" class="w3-third">
-                    <span class="w3-tag w3-blue">Toronto, Canada</span>
-                    <h2 class="w3-wrap" style="font-size:1.7rem"><strong>Instructor</strong><span
-                            class="w3-opacity" style="font-size:1.3rem "> | CSC258 Computer Organization </span></h2>
-                            <h5 style="line-height: 0;"> Easy Education | May. 2019 - Apr. 2020 </h5>
-                    <div style="margin-top: 2rem;">
-                            <img src="./teaching_files/ez.jpg" alt="Me" class="w3-image w3-card-4 "
-                                width="60%">
-                    </div>
-                </div>
-                <div id="XDF" class="w3-third">
-                    <span class="w3-tag w3-blue">Hangzhou, China</span>
-                    <h2 class="w3-wrap" style="font-size:1.7rem"><strong>Teacher</strong><span
-                            class="w3-opacity" style="font-size:1.3rem "> | IELTS Test Prep</span></h2>
-                            <h5 style="line-height: 0;"> New Oriental Education | Jun. 2019 - Jul. 2020 </h5>
-                    <div style="margin-top: 2rem;">
-                            <img src="./teaching_files/xdf-1.jpg" alt="Me" class="w3-image w3-card-4 "
-                                width="60%"><br>
-                                <img src="./teaching_files/xdf-2.jpg" alt="Me" class="w3-image w3-card-4 "
-                                width="60%" style="margin-top: 1rem;">
-                    </div>
-                </div>
-                <div id="PM" class="w3-third">
+            <div class="w3-row">
+                <div id="PM" class="w3-half" style="margin-top: 7rem;">
                     <span class="w3-tag w3-blue">Toronto, Canada </span>
-                    <h2 class="w3-wrap" style="font-size:1.7rem"><strong>Peer Mentor</strong><span
-                            class="w3-opacity" style="font-size:1.3rem "> | First-year CSC108 Students </span></h2>
-                    <h5 style="line-height: 0;">University of Toronto | Aug. 2019 - Oct. 2020 </h5>
+                    <h2 class="secTitle "><strong>Peer Mentor</strong><span class="secTitle2 w3-opacity"> | First-year
+                            CSC108 Students </span></h2>
+                    <h5 class="subTitle3Teaching">University of Toronto | Aug. 2019 - Oct. 2020 </h5>
                     <div style="margin-top: 2rem;">
-                            <img src="./teaching_files/PM.jpg" alt="Me" class="w3-image w3-card-4 "
-                                width="90%">
+                        <img src="./teaching_files/PM.jpg" alt="Me" class="w3-image w3-card-4 " width="90%">
                     </div>
+                </div>
+                <div id="EZ" class="w3-half" style="margin-top: 7rem;">
+                    <span class="w3-tag w3-blue">Toronto, Canada</span>
+                    <h2 class="secTitle "><strong>Instructor</strong><span class="secTitle2 w3-opacity"> | CSC258
+                            Computer Organization </span></h2>
+                    <h5 class="subTitle3Teaching"> Easy Education | May. 2019 - Apr. 2020 </h5>
+                    <div style="margin-top: 2rem;">
+                        <img src="./teaching_files/ez.jpg" alt="Me" class="w3-image w3-card-4 " width="50%">
+                    </div>
+                </div>
             </div>
+            <div class="w3-row" style="margin-top: 7rem;">
+                <div id="XDF">
+                    <span class="w3-tag w3-blue">Hangzhou, China</span>
+                    <h2 class="secTitle "><strong>Teacher</strong><span class="secTitle2 w3-opacity"> | IELTS Test
+                            Prep</span></h2>
+                    <h5 class="subTitle3Teaching"> New Oriental Education | Jun. 2019 - Jul. 2020 </h5>
+                </div>
+                <div style="display: flex;">
+                    <div style="flex: 1 !important; margin-top: 1rem;">
+                        <img src="./teaching_files/xdf-1.jpg" alt="Me" class="w3-image w3-card-4 " width="95%">
+                    </div>
+                    <div style="flex: 1.327!important; margin-top: 1rem;">
+                        <img src="./teaching_files/xdf-2.jpg" alt="Me" class="w3-image w3-card-4 " width="95%">
+                    </div>
+                </div>
             </div>
         </div>
-        <footer class="w3-container w3-padding-1 w3-center w3-opacity w3-white "style="margin-top: 5rem">
+        <footer class="w3-container w3-padding-1 w3-center w3-opacity w3-white " style="margin-top: 5rem">
             <p class="w3-medium ">Copyright © 2021 Zhuoyue Lyu. All rights reserved.
-                <a href="mailto:zhuoyue.lyu@mail.utoronto.ca " target="_top "></p>
+                <a href="mailto:zhuoyue.lyu@mail.utoronto.ca " target="_top ">
+            </p>
         </footer>
-
+    </div>
 </body>
 
 </html>

@@ -1,109 +1,21 @@
 <html>
-<script>
-    (function () {
-
-        var addEvent = function (el, type, fn) {
-            if (el.addEventListener)
-                el.addEventListener(type, fn, false);
-            else
-                el.attachEvent('on' + type, fn);
-        };
-
-        var extend = function (obj, ext) {
-            for (var key in ext)
-                if (ext.hasOwnProperty(key))
-                    obj[key] = ext[key];
-            return obj;
-        };
-
-        window.fitText = function (el, kompressor, options) {
-
-            var settings = extend({
-                'minFontSize': -1 / 0,
-                'maxFontSize': 1 / 0
-            }, options);
-
-            var fit = function (el) {
-                var compressor = kompressor || 1;
-
-                var resizer = function () {
-                    el.style.fontSize = Math.max(Math.min(el.clientWidth / (compressor * 10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)) + 'px';
-                };
-
-                // Call once to set.
-                resizer();
-
-                // Bind events
-                // If you have any js library which support Events, replace this part
-                // and remove addEvent function (or use original jQuery version)
-                addEvent(window, 'resize', resizer);
-                addEvent(window, 'orientationchange', resizer);
-            };
-
-            if (el.length)
-                for (var i = 0; i < el.length; i++)
-                    fit(el[i]);
-            else
-                fit(el);
-
-            // return set of elements
-            return el;
-        };
-    })();
-
-    // this is to make sure our text is responsive on different sized screens
-    window.fitText(document.getElementsByClassName("subTitle"), 1.5);
-</script>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <h3nk rel="stylesheet" href="./index_files/w3.css">
-        <style>
-            body,
-            h1,
-            h2,
-            h3,
-            h4,
-            h5 {
-                font-family: 'Rajdhani', serif
-            }
-        </style>
 </head>
 
 <body>
-    <div class=" w3-container w3-white w3-center w3-text-black w3-animate-opacity w3-padding-32"
+    <div class=" w3-container w3-white w3-center w3-text-black w3-animate-opacity w3-padding-16"
         style="max-height:100%">
-        <br><br><br>
         <div class="w3-content w3-justify " style="max-width:85%">
-            <style>
-                .video_wrapper {
-                    position: relative;
-                    padding-bottom: 53.4375%;
-                    max-width: 95%;
-                }
-
-                .iframe {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                }
-
-                .subTitle {
-                    font-size: 2;
-                    text-overflow: ellipsis;
-                    line-height: 0;
-                }
-            </style>
             <div id="sensing-AI">
                 <!-- Title row -->
                 <div class="w3-row">
                     <!-- <span class="w3-tag w3-blue">Author</span> -->
-                    <h2 class="w3-wrap" style="font-size:2.5rem"><strong>Sensing AI</strong><span class="w3-opacity"
-                            style="font-size:1.90rem "> | In Progress</span></h2>
-                    <h2 class="w3-wrap" style="font-size:1.5rem"><strong class=" w3-text-blue">Zhuoyue Lyu</strong><span
-                            class="w3-opacity" style="font-size:1.2rem "> | Aiming at <strong>International Computer
+                    <h2 class="secTitle "><strong>Sensing AI</strong><span class="secTitle2 w3-opacity"> | In
+                            Progress</span></h2>
+                    <h2 class="subTitleCS"><strong class=" w3-text-blue">Zhuoyue Lyu</strong><span class="w3-opacity"> |
+                            Aiming at <strong>International Computer
                                 Music Conference (ICMC) 2021</strong></span></h2>
                 </div>
                 <!-- video row -->
@@ -115,25 +27,35 @@
                                 allowfullscreen></iframe>
                         </div>
                     </div>
-                    <div class="w3-third" style="margin-top: 1rem;">
-                        <div style=" font-family: 'Open Sans', sans-serif;font-size:1rem; pointer-events: none;">
-                            <p>To provide people with auditory and visual intuition about AI, I sonified a neural
-                                network by mapping loss and accuracy to oscillators' frequencies and visualized it using
-                                an interactive force-directed graph in Virtual Reality (VR).</p>
-                            <p>Different colors represent different layers of the neural net. For example, the one in
-                                the video uses 16 neurons in the first hidden layer (<a class="w3-text-yellow"
-                                    style="pointer-events: none;">yellow</a>), 32 in the second hidden layer (<a
-                                    class="w3-text-blue" style="pointer-events: none;">blue</a>). The input and output
-                                are in <a class="w3-text-red" style="pointer-events: none;">red</a> and <a
-                                    class="w3-text-green" style="pointer-events: none;">green</a>, respectively. The
-                                white lines between each neuron is mapped to the weight between them; the smaller the
-                                weight, the more transparent. </p>
-                            <p>When the training start, those sounds represent the loss (left channel) and accuracy
-                                (right channel) of each training step. The neurons are jumping around because their
-                                weights in the force-directed graph are being updated.</p>
-                            <p>Under the hood, a terminal running a python script is being used to send the
-                                loss/accuracy/weights to Unity through TCP over localhost, which then mapped data to
-                                frequency and updates the visualization.</p>
+                    <div class="w3-third">
+                        <div class="text_wrapper">
+                            <div class="bodyText">
+                                <a>Researchers nowadays mainly focus on the result of AI: the accuracy, the outcome.
+                                    Not many of them focus on the <strong>learning process</strong> of AI, i.e., how
+                                    does AI "learn"
+                                    those things? How does the learning process look like, sound like, and feel like? To
+                                    provide people with auditory and visual intuition about AI, I sonified a neural
+                                    network by mapping loss and accuracy to oscillators' frequencies and visualized it
+                                    using an interactive force-directed graph in Virtual Reality (VR).</a>
+                                <p></p>
+                                <p>Different colors represent different layers of the neural net. For example, the one
+                                    in
+                                    the video uses 16 neurons in the first hidden layer (<a class="w3-text-yellow"
+                                        style="pointer-events: none;">yellow</a>), 32 in the second hidden layer (<a
+                                        class="w3-text-blue" style="pointer-events: none;">blue</a>). The input and
+                                    output
+                                    are in <a class="w3-text-red" style="pointer-events: none;">red</a> and <a
+                                        class="w3-text-green" style="pointer-events: none;">green</a>, respectively. The
+                                    white lines between each neuron is mapped to the weight between them; the smaller
+                                    the
+                                    weight, the more transparent. </p>
+                                <p>When the training start, those sounds represent the loss (left channel) and accuracy
+                                    (right channel) of each training step. The neurons are jumping around because their
+                                    weights in the force-directed graph are being updated.</p>
+                                <p>Under the hood, a terminal running a python script is being used to send the
+                                    loss/accuracy/weights to Unity through TCP over localhost, which then mapped data to
+                                    frequency and updates the visualization.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -141,85 +63,107 @@
             <div id="terminator-hands" style="margin-top: 7rem;">
                 <!-- Title row -->
                 <div class="w3-row">
-                    <h2 class="w3-wrap" style="font-size:2.5rem"><strong>Terminator Hands</strong><span
-                            class="w3-opacity" style="font-size:1.90rem "> | In Progress</span></h2>
-                    <h2 class="w3-wrap" style="font-size:1.5rem">Fengyuan Zhu, <strong class=" w3-text-blue">Zhuoyue
-                            Lyu</strong>, Tovi Grossman<span class="w3-opacity" style="font-size:1.2rem "> | Aiming at
+                    <h2 class="secTitle "><strong>Terminator Hands</strong><span class="secTitle2 w3-opacity"> | In
+                            Progress</span></h2>
+                    <h2 class="subTitleCS ">Fengyuan Zhu, <strong class=" w3-text-blue">Zhuoyue
+                            Lyu</strong>, Tovi Grossman<span class="w3-opacity"> | Aiming at
                             <strong>ACM Symposium on User Interface Software and Technology (UIST) 2021</strong></span>
                     </h2>
                 </div>
                 <!-- video row -->
                 <div class="w3-row">
                     <div class="w3-twothird" style="margin-top: 1rem;">
-                        <div class="video_wrapper w3-card-4 ">
+                        <div id="terminatorFrame" class="video_wrapper w3-card-4 ">
                             <iframe class="iframe " src="https://www.youtube.com/embed/9NTq-GkOQF0" frameborder="0 "
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
                                 allowfullscreen></iframe>
                         </div>
                     </div>
-                    <div class="w3-third" style="margin-top: 1rem;">
-                        <a
-                            style=" font-family: 'Open Sans', sans-serif; font-size:1.25rem; max-width: 85%; pointer-events: none;">
-                            <p>Designing different virtual hands to explore the impact of hands morphing on human-object
-                                interactions in VR.</p>
-                            <p>I developed the following types of morphying hands in VR:</p>
-                            <p>1. Scalable hands<br>
-                                2. Auto-scable hands<br>
-                                3. Duplicable hands<br>
-                                4. Movable hands </p>
-                        </a>
+                    <div id="terminatorText" class="w3-third bodyText" style="margin-top: 1rem;">
+                        <a>In Virtual Reality (VR), anything can take any shape. We are interested in how the different
+                            hand shapes would impact the interaction between humans and VR objects. As the co-author of
+                            this project, I develop four types of morphing hands:</a>
+                        <p> 1, 2) Scalable hands: The hand's size is changeable by adjusting the slider on the wrist.
+                            Thus, the user can use the appropriate hand size for a specific object, which makes grabbing
+                            much easier. Auto-scalable hands: it's based on scalable hands, but the size of the hand is
+                            automatically determined by the size of the target object.</p>
+
+                        <p>3) Duplicable hands: This one is my favorite; the user can create multiple copies of the
+                            same hand by clicking the controller's button. And the user can adjust the positions and
+                            movements of those hands both individually and collectively. This allows the user to
+                            grab/operate multiple objects at the same time.</p>
+
+                        <p>4) Movable hands: The hand can be shooted like a rocket, and you can control its movement
+                            and position using the joystick. This technique can help people fetching objects that are
+                            far away from them.</p>
+                        <p>User studies will be conducted to evaluate these techniques further.</p>
+
                     </div>
                 </div>
                 <div id="voiding-the-touch" style="margin-top: 7rem;">
                     <!-- Title row -->
                     <div class="w3-row">
-                        <h2 class="w3-wrap" style="font-size:2.5rem"><strong>Voiding the Touch</strong><span
-                                class="w3-opacity" style="font-size:1.90rem "> | In Progress</span></h2>
-                        <h2 class="w3-wrap" style="font-size:1.5rem">Fengyuan Zhu, <strong class=" w3-text-blue">Zhuoyue
-                                Lyu</strong>, Tovi Grossman<span class="w3-opacity" style="font-size:1.2rem "> | Aiming
+                        <h2 class="secTitle "><strong>Voiding the Touch</strong><span class="secTitle2 w3-opacity"> |
+                                Postponed by COVID-19</span></h2>
+                        <h2 class="subTitleCS ">Fengyuan Zhu, <strong class=" w3-text-blue">Zhuoyue
+                                Lyu</strong>, Tovi Grossman<span class="w3-opacity"> | Aiming
                                 at <strong>Conference on Human Factors in Computing Systems (CHI) 2022</strong></span>
                         </h2>
                     </div>
                     <!-- video row -->
                     <div class="w3-row">
-                        <div style="margin-top: 1rem;" class="w3-twothird" style=" max-width: 75%;margin-top: 1rem;">
-                            <img src="./cs_files/voiding-unclear.png" alt="Me" class="w3-image w3-card-2 " width="100%">
-                            <div class="w3-row" style="margin-top: 3rem;">
+                        <div class="w3-twothird" style="margin-top: 1rem;">
+                            <img src="./cs_files/voiding-unclear.png" alt="Me" class="w3-image w3-card-2 " width="95%">
+                            <div style="display: flex; width: 95%;">
+                                <div style="flex: 2;margin-top: 1rem;">
                                     <div class="video_wrapper w3-card-4">
                                         <iframe class="iframe " src="https://www.youtube.com/embed/7C8-askR-vk"
                                             frameborder="0 "
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
                                             allowfullscreen></iframe>
                                     </div>
+                                </div>
+                                <div style="flex: 1.42;margin-top: 1rem;">
+                                    <img src="./cs_files/voiding-setup.jpg" class="w3-image w3-card-4"
+                                        style=" margin-bottom: 1rem;">
+                                </div>
                             </div>
                         </div>
-                        <!-- <div class="w3-third" style=" max-width: 75%;margin-top: 1rem;">
-                            <a
-                                style=" font-family: 'Open Sans', sans-serif; font-size:1.25rem; pointer-events: none;">
-                                <p>Understanding performance of touch events on a physical device under different
-                                    input modalities in virtual environments by analyzing time and accuracy data
-                                    from user studies. The image above is blurred on purpose, since this work has
-                                    not published yet.</p>
+                        <div class="bodyText w3-third" style="margin-top: 1rem;">
+                            <a>
+                                While there seems to be promise in leveraging 2D mobile devices for Virtual Reality (VR)
+                                input, there is an interesting research question regarding how well users can target
+                                items on a physical touch screen when their hand is not rendered. VR is a unique
+                                platform when the hands of the users are not inherently visible. Without such rendering,
+                                they are forced to rely on proprioception alone, until contact is made, at which point
+                                they can rely on visual feedback of the touch screen. As such, we first conducted a
+                                study looking at the human’s ability to target when their finger is not visible. An
+                                essential factor in such a scenario is the use of “body-relative” interaction – where
+                                there is a real-world physical frame of reference. As such, we tested three
+                                conditions – where the user was holding the phone and tapping with their thumb on the
+                                same hand (greatest spatial reference); user was holding the phone and tapping with the
+                                opposite hand’s index finger (medium spatial reference); the phone was mounted and
+                                accessed with the index finger (least spatial reference)
                             </a>
-                            <div class="w3-center" style="max-width: 92%;">
-                                <img src="./cs_files/voiding-setup.jpg" class="w3-image w3-card-4"
-                                    style=" margin-bottom: 1rem;">
-                            </div>
-                        </div> -->
+                            <p>
+                                -----------------------------<br>
+                                * The preview image on the left is blurred on purpose, since this work has
+                                not been published yet.
+                            </p>
+                        </div>
                     </div>
-                    <div class="w3-row" style=" max-width: 75%;margin-top: 1rem;">
-                        <a style=" font-family: 'Open Sans', sans-serif; font-size:1.25rem; pointer-events: none;">
-                            <p>Understanding performance of touch events on a physical device under different
+                    <!-- <p>Understanding performance of touch events on a physical device under different
                                 input modalities in virtual environments by analyzing time and accuracy data
-                                from user studies. The image above is blurred on purpose, since this work has
-                                not published yet.</p>
-                        </a>
-                    </div>
-                    <footer class="w3-container w3-padding-1 w3-center w3-opacity w3-white "style="margin-top: 5rem">
+                                from user studies. </p> -->
+                    <footer class="w3-container w3-padding-1 w3-center w3-opacity w3-white " style="margin-top: 5rem">
                         <p class="w3-medium ">Copyright © 2021 Zhuoyue Lyu. All rights reserved.
-                            <a href="mailto:zhuoyue.lyu@mail.utoronto.ca " target="_top "></p>
+                            <a href="mailto:zhuoyue.lyu@mail.utoronto.ca " target="_top ">
+                        </p>
                     </footer>
-
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
