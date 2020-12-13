@@ -146,18 +146,19 @@
             document.getElementById(sidebarItemID).classList.remove("w3-hover-text-indigo");
             document.getElementById(sidebarItemID).classList.add("w3-light-grey");
 
-            // adjust body text size based on the specific page
-            switch (pageName) {
-                case "cs":
-                    alignHeight(window, "terminatorText", "terminatorFrame");
-                    break;
-                case "voice":
-                    alignHeight(window, "youtubeText", "youtubeFrame");
-                    break;
-                default:
-                    return
+            // adjust body text size based on the specific page (don't do this on small screen, i.e. < 600px)
+            if (window.innerWidth >= 601) {
+                switch (pageName) {
+                    case "cs":
+                        alignHeight(window, "terminatorText", "terminatorFrame");
+                        break;
+                    case "voice":
+                        alignHeight(window, "youtubeText", "youtubeFrame");
+                        break;
+                    default:
+                        return
+                }
             }
-
         }
         // change the following Id for the default page when first opened
         // voiceSidebarItem

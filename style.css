@@ -88,7 +88,7 @@ a:active {
         /* font-family: 'Open Sans', sans-serif; */
     }
     .secTitle {
-        font-size:2.5rem;
+        font-size:2.4rem;
         /* white-space: nowrap; */
         overflow: hidden;
         text-overflow: ellipsis;
@@ -98,6 +98,33 @@ a:active {
         /* white-space: nowrap; */
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+    .subTitle {
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 1.8rem;
+        text-overflow: ellipsis;
+        margin-bottom: -0.5rem;
+    }
+    .subTitleCS {
+        overflow: hidden;
+        font-size: 1.3rem;
+        text-overflow: ellipsis;
+    }
+    .subTitle2 {
+        white-space: nowrap;
+        font-size: 1.1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .subTitle3 {
+        white-space: nowrap;
+        font-size: 1.1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: -0.1rem;
+        margin-bottom: -0.5rem;
     }
 }
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
@@ -125,36 +152,33 @@ a:active {
         overflow: hidden;
         text-overflow: ellipsis;
     }
-}
+    .subTitle {
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 1.3rem;
+        text-overflow: ellipsis;
+        margin-bottom: -0.5rem;
+    }
+    .subTitleCS {
+        overflow: hidden;
+        font-size: 0.9rem;
+        text-overflow: ellipsis;
+    }
+    .subTitle2 {
+        white-space: nowrap;
+        font-size: 0.8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
-
-.subTitle {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: -0.5rem;
-}
-
-.subTitleCS {
-    white-space: nowrap;
-    overflow: hidden;
-    font-size: 1.3rem;
-    text-overflow: ellipsis;
-}
-.subTitle2 {
-    white-space: nowrap;
-    font-size: 1.1rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.subTitle3 {
-    white-space: nowrap;
-    font-size: 1.1rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-top: -0.1rem;
-    margin-bottom: -0.5rem;
+    .subTitle3 {
+        white-space: nowrap;
+        font-size: 0.8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: -0.1rem;
+        margin-bottom: -0.5rem;
+    }
 }
 
 .subTitle3Teaching {
