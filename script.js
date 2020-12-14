@@ -138,9 +138,6 @@ function alignHeight(el, textID, frameID) {
 
     // Adjust the height
     const fn = function () {
-        console.log("height")
-        console.log(frame.clientHeight);
-        console.log(frame.scrollHeight);
         text.style.height = frame.clientHeight + "px";
     };
 
@@ -152,20 +149,12 @@ function alignHeight(el, textID, frameID) {
         // let fontSize = parseInt(text.style.fontSize);
         const style = window.getComputedStyle(text, null).getPropertyValue('font-size');
         let fontSize = parseFloat(style);
-        console.log("font size");
-        console.log(fontSize);
         while (!isOverflown(text)) {
-            console.log("Enlarge");
-            console.log(i);
             fontSize += 0.1;
-            console.log(fontSize);
             text.style.fontSize = fontSize + "px";
         }
         while (isOverflown(text)) {
-            console.log("Shrink");
-            console.log(i);
             fontSize -= 0.1;
-            console.log(fontSize);
             text.style.fontSize = fontSize + "px";
         }
 
