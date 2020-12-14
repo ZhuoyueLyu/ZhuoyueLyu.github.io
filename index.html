@@ -154,6 +154,21 @@
                         break;
                     case "voice":
                         alignHeight(window, "youtubeText", "youtubeFrame");
+                        setTimeout(function () {
+                            // image will return height = 0 if it's not loaded
+                            // so we give it a bit of time to load before calling aligh height
+                            let id;
+                            const picHeight = document.getElementById("presentPic");
+                            const wrapper = document.getElementById("presentAudioWrapper");
+                            const presentAd = document.getElementById("presentAudio0");
+                            const eachHeight = (picHeight.clientHeight - (wrapper.clientHeight - 3 * presentAd.height)) / 3
+                            if (eachHeight) {
+                                for (id = 0; id < 3; id++) {
+                                    const presentAudio = document.getElementById("presentAudio" + id);
+                                    presentAudio.height = eachHeight + "px";
+                                }
+                            }
+                        }, 500);
                         break;
                     default:
                         return
