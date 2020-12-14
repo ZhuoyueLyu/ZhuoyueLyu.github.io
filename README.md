@@ -1,5 +1,5 @@
 # zhuoyue.github.io
-This is my personal website (All designed by myself)
+This is my personal website (All designed & coded by myself)
 
 
 # Useful links
