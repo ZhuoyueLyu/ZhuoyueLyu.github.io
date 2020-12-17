@@ -79,10 +79,10 @@
     <div class="w3-main" style="margin-left:300px">
         <!-- The following line make sure the content would not collide into the header on the small screen-->
         <div class="w3-hide-large" style="margin-top:83px"></div>
-        <div class="page" id="homePage" style="display:block"></div>
-        <div class="page" id="voicePage" style="display:block"></div>
-        <div class="page" id="csPage" style="display:block"></div>
-        <div class="page" id="teachingPage" style="display:block"></div>
+        <div class="page" id="homePage" style="display:none"></div>
+        <div class="page" id="voicePage" style="display:none"></div>
+        <div class="page" id="csPage" style="display:none"></div>
+        <div class="page" id="teachingPage" style="display:none"></div>
     </div>
     <script>
         $(function () {
@@ -183,7 +183,9 @@
         console.log("Just want to check this:");
         console.log(myParam)
         if (myParam) {
-            document.getElementById(myParam + "SidebarItem").click();
+            setTimeout(function () {
+                document.getElementById(myParam + "SidebarItem").click();
+            }, 100);
         } else {
             document.getElementById("homeSidebarItem").click();
         }
