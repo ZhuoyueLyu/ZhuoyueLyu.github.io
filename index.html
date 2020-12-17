@@ -177,11 +177,16 @@
                 }
             }
         }
-        // change the following Id for the default page when first opened
-        // voiceSidebarItem
-        // homeSidebarItem
 
-        document.getElementById("homeSidebarItem").click();
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('target');
+        console.log("Just want to check this:");
+        console.log(myParam)
+        if (myParam) {
+            document.getElementById(myParam + "SidebarItem").click();
+        } else {
+            document.getElementById("homeSidebarItem").click();
+        }
     </script>
 </body>
 
