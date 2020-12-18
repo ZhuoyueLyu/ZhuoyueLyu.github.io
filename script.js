@@ -132,6 +132,14 @@
 })()
 
 
+
+function adjustHomePageHeight(homePageID) {
+    const page = document.getElementById(homePageID);
+    if (page.offsetHeight < window.innerHeight) {
+        page.style.height = window.innerHeight + "px";
+    }
+}
+
 function alignHeight(el, textID, frameID) {
     const text = document.getElementById(textID);
     const frame = document.getElementById(frameID);
@@ -175,12 +183,15 @@ function alignHeight(el, textID, frameID) {
 
 }
 
-// Get the query
-function getParameterByName(name, url = window.location.href) {
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+// For the image slide show
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 7500);
+  }

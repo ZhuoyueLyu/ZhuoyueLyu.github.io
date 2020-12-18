@@ -151,6 +151,11 @@
             // adjust body text size based on the specific page (don't do this on small screen, i.e. < 600px)
             if (window.innerWidth >= 601) {
                 switch (pageName) {
+                    case "home":
+                        setTimeout(function () {
+                            adjustHomePageHeight("home");
+                        }, 100);
+                        break;
                     case "cs":
                         alignHeight(window, "terminatorText", "terminatorFrame");
                         break;
@@ -172,7 +177,7 @@
                             }
                         }, 500);
                         break;
-                    default:
+                        defaulft:
                         return
                 }
             }
