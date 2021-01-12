@@ -78,3 +78,30 @@
                 // Get the element with id="defaultOpen " and click on it
                 document.getElementById("defaultOpen ").click();
             </script> -->
+
+
+            <a>Researchers nowadays mainly focus on the result of AI: the accuracy, the outcome.
+                Not many of them focus on the <strong>learning process</strong> of AI, i.e., how
+                does AI "learn"
+                those things? How does the learning process look like, sound like, and feel like? To
+                provide people with auditory and visual intuition about AI, I sonified a neural
+                network by mapping loss and accuracy to oscillators' frequencies and visualized it
+                using an interactive force-directed graph in Virtual Reality (VR).</a>
+            <p></p>
+            <p>Different colors represent different layers of the neural net. For example, the one
+                in
+                the video uses 16 neurons in the first hidden layer (<a class="w3-text-yellow"
+                    style="pointer-events: none;">yellow</a>), 32 in the second hidden layer (<a
+                    class="w3-text-blue" style="pointer-events: none;">blue</a>). The input and
+                output
+                are in <a class="w3-text-red" style="pointer-events: none;">red</a> and <a
+                    class="w3-text-green" style="pointer-events: none;">green</a>, respectively. The
+                white lines between each neuron is mapped to the weight between them; the smaller
+                the
+                weight, the more transparent. </p>
+            <p>When the training start, those sounds represent the loss (left channel) and accuracy
+                (right channel) of each training step. The neurons are jumping around because their
+                weights in the force-directed graph are being updated.</p>
+            <p>Under the hood, a terminal running a python script is being used to send the
+                loss/accuracy/weights to Unity through TCP over localhost, which then mapped data to
+                frequency and updates the visualization.</p>
