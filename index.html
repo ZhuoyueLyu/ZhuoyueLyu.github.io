@@ -65,8 +65,8 @@
             <!-- <a href="https://www.facebook.com/zhuoyuelyu/" target="_blank" class="fa fa-facebook"></a> -->
             <a href="mailto:zhuoyue.lyu@mail.utoronto.ca" target="_top" class="fa fa-envelope"></a>
         </div>
-        <a class="w3-display-bottommiddle" href="mailto:zhuoyue.lyu@mail.utoronto.ca" target="_top"
-            style="font-size:1rem; margin-bottom: 0.5rem;opacity: 0.5;"> zhuoyue.lyu@mail.utoronto.ca</a>
+        <a class="w3-display-bottommiddle" id="email-address-zhuoyue" href="mailto:zhuoyue.lyu@mail.utoronto.ca"
+            target="_top" style="font-size:1rem; margin-bottom: 0.5rem;opacity: 0.5;"> zhuoyue.lyu@mail.utoronto.ca</a>
     </nav>
     <!-- Top menu on small screens -->
     <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16 w3-card">
@@ -125,6 +125,12 @@
         function w3_close() {
             document.getElementById("mySidebar").style.display = "none";
             document.getElementById("myOverlay").style.display = "none";
+        }
+
+        function hideEmailOnSmallScreen() {
+            if (window.innerWidth < 600) {
+                document.getElementById("email-address-zhuoyue").style.visibility = "hidden";
+            }
         }
 
         function openPage(pageName) {
@@ -195,6 +201,8 @@
         } else {
             document.getElementById("homeSidebarItem").click();
         }
+
+        hideEmailOnSmallScreen();
     </script>
 </body>
 
