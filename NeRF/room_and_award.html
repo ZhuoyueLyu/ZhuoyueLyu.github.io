@@ -1,15 +1,195 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+        font-family: "Lato", sans-serif
+    }
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+    .mySlides {
+        display: none
+    }
+</style>
 
 <body>
-    <div class=" w3-container w3-white w3-center w3-text-black w3-animate-opacity w3-padding-16"
-        style="max-height:100%">
-        <img src="./gif/room-60-epoch-9.gif" />
-        <img src="./gif/award-60-epoch-0.gif" />
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:2000px">
+
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+            <h2 class="w3-wide">NOVEL VIEW SYNTHESIS USING NERF</h2>
+            <p class="w3-opacity">Zhuoyue Lyu</p>
+            <p class="w3-justify">I trained the <a href="https://www.matthewtancik.com/nerf" class="w3-text-blue"
+                    target="_blank">NeRF</a> on 60 photos of my bedroom and 60 photos of a certificate to generate novel
+                view synthesis.
+                This is also my final project for the course <a
+                    href="http://www.cs.toronto.edu/~fidler/teaching/2021/CSC420.html" class="w3-text-blue"
+                    target="_blank">CSC 420: Introduction to Image Understanding</a> at the University of Toronto.</p>
+            <div class="w3-row w3-padding-32">
+                <div class="w3-half">
+                    <p>room (synthesized)</p>
+                    <img src="./pic/room-60-epoch-9.gif" class="w3-round w3-margin-bottom" alt="Random Name"
+                        style="width:96%">
+                </div>
+                <div class="w3-half">
+                    <p>certificate (synthesized)</p>
+                    <img src="./pic/award-60-epoch-4.gif" class="w3-round w3-margin-bottom" alt="Random Name"
+                        style="width:96%">
+                </div>
+            </div>
+            <div class="w3-row w3-padding-32">
+                <div class="w3-half">
+                    <p>room (60 training images)</p>
+                    <img src="./pic/room-gallery.jpg" class="w3-round w3-margin-bottom" alt="Random Name"
+                        style="width:96%">
+                </div>
+                <div class="w3-half">
+                    <p>certificate (60 training images)</p>
+                    <img src="./pic/award-gallery.jpg" class="w3-round w3-margin-bottom" alt="Random Name"
+                        style="width:96%">
+                </div>
+            </div>
+        </div>
+
+        <!-- The Tour Section -->
+        <div class="w3-black" id="tour">
+            <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+                <h2 class="w3-wide w3-center">Comparison</h2>
+                <p class="w3-opacity w3-center"><i>How the number of views affect the 3D radiancefield</i></p><br>
+
+                <div class="w3-row w3-padding-32">
+                    <div class="w3-third">
+                        <p>20 views, epoch = 1</p>
+                        <img src="./pic/room-20-epoch-0.gif" class="w3-round w3-margin-bottom" alt="Random Name"
+                            style="width:98%">
+                    </div>
+                    <div class="w3-third">
+                        <p>40 views, epoch = 1</p>
+                        <img src="./pic/room-40-epoch-0.gif" class="w3-round w3-margin-bottom" alt="Random Name"
+                            style="width:98%">
+                    </div>
+                    <div class="w3-third">
+                        <p>60 views, epoch = 1</p>
+                        <img src="./pic/room-60-epoch-0.gif" class="w3-round" alt="Random Name" style="width:98%">
+                    </div>
+                </div>
+                <div class="w3-row w3-padding-32">
+                    <div class="w3-third">
+                        <p>20 views, epoch = 10</p>
+                        <img src="./pic/room-20-epoch-5.gif" class="w3-round w3-margin-bottom" alt="Random Name"
+                            style="width:98%">
+                    </div>
+                    <div class="w3-third">
+                        <p>40 views, epoch = 10</p>
+                        <img src="./pic/room-40-epoch-9.gif" class="w3-round w3-margin-bottom" alt="Random Name"
+                            style="width:98%">
+                    </div>
+                    <div class="w3-third">
+                        <p>60 views, epoch = 10</p>
+                        <img src="./pic/room-60-epoch-9.gif" class="w3-round" alt="Random Name" style="width:98%">
+                    </div>
+                </div>
+                <div class="w3-row w3-padding-32">
+                    <p> By comparing the visualization horizontally, we can clearly see that the number of viewpoints
+                        affects the quality of the results; generally, the more the view, the better the outcome. For
+                        example, if we only train the model for one epoch, the outcome of 20 views (top left) is fluffy,
+                        unclear; we can even see a large chunk of blue colors floating in the air, this is because the
+                        training set of 20 views only has few examples of the bottom left corners of the bed, so the
+                        model can't estimate the 3D residence field properly. But if we provide 60 images, the outcome
+                        is pretty decent even for one epoch. By comparing the visualization vertically, we can see how
+                        the model gradually learns the environment as training went on. Just look at the edges of the
+                        nightstand, the triangle shape of the quilt...amazing! </p>
+
+                    <p> However, if we look at the bottom right (60, epoch 10) image, we see a lot of black things
+                        floating
+                        around. I guess this is because my phone camera has a dynamic white balance, and when I was
+                        taking the image, my body blocked part of the light, thus created shadows. The model
+                        captured
+                        that accurately, but it's probably a little bit overfitting.</p>
+
+                    <p> Other than that, the synthesis looks pretty good. Look at the <b
+                            class="w3-text-orange">reflection of the lamp's light
+                            on the surface of the nightstand </b>, incredible!</p>
+                </div>
+
+                <div class="w3-row w3-padding-32">
+                    <div class="w3-half">
+                        <p>60 views, epoch = 0</p>
+                        <img src="./pic/award-60-epoch-0.gif" class="w3-round w3-margin-bottom" alt="Random Name"
+                            style="width:98%">
+                    </div>
+                    <div class="w3-half">
+                        <p>60 views, epoch = 5</p>
+                        <img src="./pic/award-60-epoch-4.gif" class="w3-round w3-margin-bottom" alt="Random Name"
+                            style="width:98%">
+                    </div>
+                </div>
+                <div class="w3-row w3-padding-32">
+                    <p> By comparing these two syntheses, we can see how the number of epochs affects the output
+                        quality. My name "Zhuoyue Lyu" is hardly seen on the left; everything is blurry, but on the
+                        right, we can see not only the name but also the details of those tiny words beneath it!</p>
+                    <p>Besides, we can see how the environment is still not clean, and there are many dark chunks of
+                        colors floating in the air. I believe this will be improved if we take more pictures and
+                        increase the number of epochs. </p>
+                    <p>We can also see the synthesis looks weird from the back of the binding edge; this is due to the
+                        lack of training data from that views, and I clearly remember I took most of the pictures from
+                        the front of the certificate.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- End Page Content -->
     </div>
+
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+
+    </footer>
+
+    <script>
+        // Automatic Slideshow - change image every 4 seconds
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 4000);
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        var modal = document.getElementById('ticketModal');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
 </body>
 
 </html>
