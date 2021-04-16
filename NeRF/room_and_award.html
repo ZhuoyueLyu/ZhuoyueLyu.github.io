@@ -32,12 +32,12 @@
                     target="_blank">CSC 420: Introduction to Image Understanding</a> at the University of Toronto.</p>
             <div class="w3-row w3-padding-32">
                 <div class="w3-half">
-                    <p>room (synthesized)</p>
+                    <p>room (forward facing synthesis)</p>
                     <img src="./pic/room-60-epoch-9.gif" class="w3-round w3-margin-bottom" alt="Random Name"
                         style="width:96%">
                 </div>
                 <div class="w3-half">
-                    <p>certificate (synthesized)</p>
+                    <p>certificate (360 inward facing synthesis)</p>
                     <img src="./pic/award-60-epoch-4.gif" class="w3-round w3-margin-bottom" alt="Random Name"
                         style="width:96%">
                 </div>
@@ -59,8 +59,8 @@
         <!-- The Tour Section -->
         <div class="w3-black" id="tour">
             <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-                <h2 class="w3-wide w3-center">Comparison</h2>
-                <p class="w3-opacity w3-center"><i>How the number of views affect the 3D radiancefield</i></p><br>
+                <h2 class="w3-wide w3-center">Forward Facing Scene</h2>
+                <p class="w3-opacity w3-center"><i>How the number of views/epochs affect the 3D radiancefield</i></p><br>
 
                 <div class="w3-row w3-padding-32">
                     <div class="w3-third">
@@ -116,30 +116,6 @@
                             class="w3-text-orange">reflection of the lamp's light
                             on the surface of the nightstand </b>, incredible!</p>
                 </div>
-
-                <div class="w3-row w3-padding-32">
-                    <div class="w3-half">
-                        <p>60 views, epoch = 0</p>
-                        <img src="./pic/award-60-epoch-0.gif" class="w3-round w3-margin-bottom" alt="Random Name"
-                            style="width:98%">
-                    </div>
-                    <div class="w3-half">
-                        <p>60 views, epoch = 5</p>
-                        <img src="./pic/award-60-epoch-4.gif" class="w3-round w3-margin-bottom" alt="Random Name"
-                            style="width:98%">
-                    </div>
-                </div>
-                <div class="w3-row w3-padding-32">
-                    <p> By comparing these two syntheses, we can see how the number of epochs affects the output
-                        quality. My name "Zhuoyue Lyu" is hardly seen on the left; everything is blurry, but on the
-                        right, we can see not only the name but also the details of those tiny words beneath it!</p>
-                    <p>Besides, we can see how the environment is still not clean, and there are many dark chunks of
-                        colors floating in the air. I believe this will be improved if we take more pictures and
-                        increase the number of epochs. </p>
-                    <p>We can also see the synthesis looks weird from the back of the binding edge; this is due to the
-                        lack of training data from that views, and I clearly remember I took most of the pictures from
-                        the front of the certificate.</p>
-                </div>
             </div>
         </div>
 
@@ -150,8 +126,34 @@
 
 
     <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-
+    <footer class="w3-container w3-padding-64 ">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+            <h2 class="w3-wide w3-center">360 Inward Facing Scene</h2>
+                <p class="w3-opacity w3-center"><i>How the number of epochs affect the 3D radiancefield</i></p><br>
+            <div class="w3-row w3-padding-32">
+                <div class="w3-half">
+                    <p>60 views, epoch = 0</p>
+                    <img src="./pic/award-60-epoch-0.gif" class="w3-round w3-margin-bottom" alt="Random Name"
+                        style="width:98%">
+                </div>
+                <div class="w3-half">
+                    <p>60 views, epoch = 5</p>
+                    <img src="./pic/award-60-epoch-4.gif" class="w3-round w3-margin-bottom" alt="Random Name"
+                        style="width:98%">
+                </div>
+            </div>
+            <div class="w3-row w3-padding-32">
+                <p> By comparing these two syntheses, we can see how the number of epochs affects the output
+                    quality. My name "Zhuoyue Lyu" is hardly seen on the left; everything is blurry, but on the
+                    right, we can see not only the name but also the details of those tiny words beneath it!</p>
+                <p>Besides, we can see how the environment is still not clean, and there are many dark chunks of
+                    colors floating in the air. I believe this will be improved if we take more pictures and
+                    increase the number of epochs. </p>
+                <p>We can also see the synthesis looks weird from the back of the binding edge; this is due to the
+                    lack of training data from that views, and I clearly remember I took most of the pictures from
+                    the front of the certificate.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
